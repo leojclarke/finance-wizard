@@ -9,7 +9,7 @@ const transactionData = [
             "payee": {
                 "shortname": "ALDI",
                 "longname": "ALDI 293 HH-Langenhorner Chaussee",
-                "imgsrc": "images/brandlogos/aldi.png",
+                "imgsrc": "images/aldi.png",
             },
             "reference": "djfhs-ldkjf234h-pozasd",
             "type": "expense",
@@ -20,14 +20,14 @@ const transactionData = [
         {
             "id": 2,
             "description": "Penny sagt danke",
-            "amount": 12.5,
+            "amount": 24.5,
             "date": "2021-11-05 13:20:44",
             "category": "Food shopping",
             "account": "Postbank",
             "payee": {
                 "shortname": "Penny",
                 "longname": "Penny 53 HH-Troplowitz",
-                "imgsrc": "images/brandlogos/penny.png",
+                "imgsrc": "/images/penny.png",
             },
             "reference": "nvdhiur8-83thzd6-psldje",
             "type": "expense",
@@ -45,7 +45,7 @@ const transactionData = [
             "payee": {
                 "shortname": "Apple",
                 "longname": "Apple Computer Industries",
-                "imgsrc": "images/brandlogos/apple.png",
+                "imgsrc": "/images/apple.png",
             },
             "reference": "Gehaltsabrechnung Oktober 2021",
             "type": "income",

@@ -1,0 +1,27 @@
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+    background: beige;
+    
+}
+
+.logo {
+    padding: 5px;
+}
+
+.description {
+    padding: 0 15px;
+    text-align: left;
+    align-items: center;
+    min-width: 380px;
+}
+
+.amount {
+    text-align: right;
+    min-width: 100px;
+    padding-right: 10px;
+}
