@@ -1,0 +1,38 @@
+.transaction-row {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 0px 10px;
+    border-bottom: 1px #ddd solid;
+}
+
+.transaction-logo {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.transaction-description {
+    padding: 0 10px;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    min-width: 380px;
+}
+
+.transaction-description p {
+margin: 0;}
+
+.transaction-payee {
+    font-weight: 700;
+}
+
+
+.transaction-amount {
+    text-align: right;
+    min-width: 100px;
+    padding-right: 10px;
+}
