@@ -6,21 +6,23 @@ export default function Transactions() {
 
     return (
         <ul>
+          <li className="transaction-row"><h2>November</h2></li>
             {transactionData.map((data, key) => {
                 return (
-                  <li key={key}>
-                    <div className="logo">
-                      <img
+                  <li className="transaction-row" key={key}>
+                    <div>
+                      <img 
+                        className="transaction-logo"
                         src={data.payee.imgsrc}
-                        alt="brandlogo"
+                        alt={data.payee.shortname}
                         width="60px"
                       />
                     </div>
-                    <div className="description">
-                      <p>{data.payee.shortname}</p>
+                    <div className="transaction-description">
+                      <p className="transaction-payee">{data.payee.shortname}</p>
                       <p>{data.date}</p>
                     </div>
-                    <div className="amount">{" € " + data.amount}</div>
+                    <div className="transaction-amount">{" € " + data.amount}</div>
                   </li>
                 );
             })}
