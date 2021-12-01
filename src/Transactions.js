@@ -22,7 +22,7 @@ export default function Transactions() {
                       <p className="transaction-payee">{data.payee.shortname}</p>
                       <p>{data.date}</p>
                     </div>
-                    <div className="transaction-amount">{" € " + data.amount}</div>
+                    <div className="transaction-amount">{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(data.amount)}</div>
                   </li>
                 );
             })}
