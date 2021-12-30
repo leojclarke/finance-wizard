@@ -6,21 +6,6 @@ export default function Transactions({
   dateFormatter,
   currencyFormatter,
 }) {
-  console.log(data[1]);
-
-  // const getFormattedDate = (dateStr) => {
-  //   const date = new Date(dateStr);
-  //   const options = { day: "numeric", month: "short" };
-  //   return date.toLocaleDateString("en-UK", options);
-  // };
-
-  // const getFormattedAmount = (amount) => {
-  //   return new Intl.NumberFormat("de-DE", {
-  //     style: "currency",
-  //     currency: "EUR",
-  //   }).format(amount);
-  // };
-
   return (
     <section>
       <div className="transaction-section-header">
