@@ -1,15 +1,19 @@
 import React from "react";
 import "./Transactions.css";
 import transactions from "./data.json";
-import payees from "./payees.json";
 
 export default function Transactions() {
-  console.log(payees[0].shortName);
-
   const getFormattedDate = (dateStr) => {
     const date = new Date(dateStr);
     const options = { day: "numeric", month: "short" };
     return date.toLocaleDateString("en-UK", options);
+  };
+
+  const getFormattedAmount = (amount) => {
+    return new Intl.NumberFormat("de-DE", {
+      style: "currency",
+      currency: "EUR",
+    }).format(amount);
   };
 
   return (
@@ -35,10 +39,7 @@ export default function Transactions() {
                   <p>{getFormattedDate(data.date)}</p>
                 </div>
                 <div className="transaction-amount">
-                  {new Intl.NumberFormat("de-DE", {
-                    style: "currency",
-                    currency: "EUR",
-                  }).format(data.amount)}
+                  <p>{getFormattedAmount(data.amount)}</p>
                 </div>
               </li>
             );
