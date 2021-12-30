@@ -1,11 +1,19 @@
 import "./App.css";
 import { getLocal, setLocal } from "./utils/services";
+
 import Header from "./Header";
 import TransactionGenerator from "./TransactionGenerator";
 import TransactionList from "./Transactions";
-import transactionData from "./data.json";
+import sampleTransactions from "./data.json";
+import { useState, useEffect } from "react";
 
 export default function App() {
+  const [transactions] = useState(
+    getLocal("transactions") || sampleTransactions
+  );
+
+  useEffect(() => setLocal("transactions", transactions), [transactions]);
+
   const getFormattedDate = (dateStr) => {
     const date = new Date(dateStr);
     const options = { day: "numeric", month: "short" };
@@ -24,7 +32,7 @@ export default function App() {
       <Header />
       <main>
         <TransactionList
-          data={transactionData}
+          data={transactions}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
         />
