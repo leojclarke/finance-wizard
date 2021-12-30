@@ -1,8 +1,9 @@
 import React from "react";
 import "./Transactions.css";
-import transactions from "./data.json";
 
-export default function Transactions() {
+export default function Transactions({ data }) {
+  console.log(data[1]);
+
   const getFormattedDate = (dateStr) => {
     const date = new Date(dateStr);
     const options = { day: "numeric", month: "short" };
@@ -23,23 +24,25 @@ export default function Transactions() {
       </div>
       <div>
         <ul className="transactions-list">
-          {transactions.map((data, key) => {
+          {data.map((transactions, key) => {
             return (
               <li className="transaction-row" key={key}>
                 <div>
                   <img
                     className="transaction-logo"
-                    src={data.payee.imgsrc}
-                    alt={data.payee.shortname}
+                    src={transactions.payee.imgsrc}
+                    alt={transactions.payee.shortname}
                     width="60px"
                   />
                 </div>
                 <div className="transaction-description">
-                  <p className="transaction-payee">{data.payee.shortname}</p>
-                  <p>{getFormattedDate(data.date)}</p>
+                  <p className="transaction-payee">
+                    {transactions.payee.shortname}
+                  </p>
+                  <p>{getFormattedDate(transactions.date)}</p>
                 </div>
                 <div className="transaction-amount">
-                  <p>{getFormattedAmount(data.amount)}</p>
+                  <p>{getFormattedAmount(transactions.amount)}</p>
                 </div>
               </li>
             );

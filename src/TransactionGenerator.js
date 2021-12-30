@@ -1,9 +1,13 @@
 import React from "react";
 
 export default function TransactionGenerator() {
+  const generateTransaction = () => {
+    console.log("GENERATE");
+  };
+
   return (
     <div>
-      <button>GENERATE</button>
+      <button onClick={generateTransaction}>GENERATE</button>
     </div>
   );
 }
