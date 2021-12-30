@@ -6,6 +6,12 @@ import payees from "./payees.json";
 export default function Transactions() {
   console.log(payees[0].shortName);
 
+  const getFormattedDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const options = { day: "numeric", month: "short" };
+    return date.toLocaleDateString("en-UK", options);
+  };
+
   return (
     <section>
       <div className="transaction-section-header">
@@ -14,9 +20,6 @@ export default function Transactions() {
       <div>
         <ul className="transactions-list">
           {transactions.map((data, key) => {
-            let date = data.date;
-            console.log(date);
-
             return (
               <li className="transaction-row" key={key}>
                 <div>
@@ -29,7 +32,7 @@ export default function Transactions() {
                 </div>
                 <div className="transaction-description">
                   <p className="transaction-payee">{data.payee.shortname}</p>
-                  <p>{date}</p>
+                  <p>{getFormattedDate(data.date)}</p>
                 </div>
                 <div className="transaction-amount">
                   {new Intl.NumberFormat("de-DE", {
