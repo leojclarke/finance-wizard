@@ -1,8 +1,11 @@
 import React from "react";
 import "./Transactions.css";
-import transactionData from "./data";
+import transactions from "./data.json";
+import payees from "./payees.json";
 
 export default function Transactions() {
+  console.log(payees[0].shortName);
+
   return (
     <section>
       <div className="transaction-section-header">
@@ -10,7 +13,10 @@ export default function Transactions() {
       </div>
       <div>
         <ul className="transactions-list">
-          {transactionData.map((data, key) => {
+          {transactions.map((data, key) => {
+            let date = data.date;
+            console.log(date);
+
             return (
               <li className="transaction-row" key={key}>
                 <div>
@@ -23,7 +29,7 @@ export default function Transactions() {
                 </div>
                 <div className="transaction-description">
                   <p className="transaction-payee">{data.payee.shortname}</p>
-                  <p>{data.date}</p>
+                  <p>{date}</p>
                 </div>
                 <div className="transaction-amount">
                   {new Intl.NumberFormat("de-DE", {
