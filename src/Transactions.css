@@ -1,38 +1,53 @@
+.transaction-month-header {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: hotpink;
+  text-align: left;
+}
+
+.transaction-row,
+.transaction-section-header {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 858px;
+  margin: auto;
+}
+
+.transactions-list {
+  margin: 0;
+  padding: 0;
+}
+
 .transaction-row {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 600px;
-    margin: auto;
-    background: #ffffff;
-    padding: 0px 10px;
-    border-bottom: 1px #ddd solid;
+  background: #ffffff;
+  border-bottom: 1px #ddd solid;
 }
 
 .transaction-logo {
-    padding: 5px;
-    border-radius: 10px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .transaction-description {
-    padding: 0 10px;
-    text-align: left;
-    align-items: center;
-    justify-content: left;
-    min-width: 380px;
+  padding: 0 10px;
+  text-align: left;
+  align-items: center;
+  justify-content: left;
+  min-width: 600px;
 }
 
 .transaction-description p {
-margin: 0;}
-
-.transaction-payee {
-    font-weight: 700;
+  margin: 0;
 }
 
+.transaction-payee {
+  font-weight: 700;
+}
 
 .transaction-amount {
-    text-align: right;
-    min-width: 100px;
-    padding-right: 10px;
+  text-align: right;
+  min-width: 100px;
+  padding-right: 10px;
 }
