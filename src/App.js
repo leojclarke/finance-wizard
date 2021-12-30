@@ -8,7 +8,7 @@ import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
 
 export default function App() {
-  const [transactions] = useState(
+  const [transactions, setTransactions] = useState(
     getLocal("transactions") || sampleTransactions
   );
 
@@ -27,16 +27,24 @@ export default function App() {
     }).format(amount);
   };
 
+  function handleTransactionAdd(newTransactions) {
+    console.log("added transaction");
+    setTransactions(newTransactions);
+  }
+
   return (
     <div className="App">
       <Header />
       <main>
+        <TransactionGenerator
+          data={transactions}
+          onTransactionAdd={handleTransactionAdd}
+        />
         <TransactionList
           data={transactions}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
         />
-        <TransactionGenerator />
       </main>
     </div>
   );
