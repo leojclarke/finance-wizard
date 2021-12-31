@@ -15,15 +15,15 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
     const newTransactions = [
       {
         id: data.length + 1,
-        description: "Gehalt",
-        amount: Math.floor(Math.random() * 100),
+        description: "Shopping",
+        amount: Math.floor(Math.random() * 80),
         currency: "EUR",
-        date: randomDate(new Date(2021, 0, 1), new Date()),
-        category: "Salary",
+        date: randomDate(new Date(2021, 0, 1), new Date()).toJSON(),
+        category: "Groceries",
         account: "Postbank",
         payee: payees[Math.floor(Math.random() * payees.length)],
-        reference: "Gehaltsabrechnung Oktober 2021",
-        type: "income",
+        reference: "Generated Entry",
+        type: "Expense",
       },
       ...data,
     ];

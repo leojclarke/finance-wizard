@@ -8,6 +8,8 @@ import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
 
 export default function App() {
+  sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+
   const [transactions, setTransactions] = useState(
     getLocal("transactions") || sampleTransactions
   );
@@ -16,7 +18,7 @@ export default function App() {
 
   const getFormattedDate = (dateStr) => {
     const date = new Date(dateStr);
-    const options = { day: "numeric", month: "short" };
+    const options = { day: "numeric", month: "short", year: "numeric" };
     return date.toLocaleDateString("en-UK", options);
   };
 
@@ -28,8 +30,7 @@ export default function App() {
   };
 
   function handleTransactionAdd(newTransactions) {
-    console.log("added transaction");
-    newTransactions.sort((a, b) => a.date - b.date);
+    newTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
     setTransactions(newTransactions);
   }
 

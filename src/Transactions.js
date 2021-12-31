@@ -9,11 +9,12 @@ export default function Transactions({
   return (
     <section>
       <div className="transaction-section-header">
-        <h2 className="transaction-month-header">November</h2>
+        <h2 className="transaction-month-header">MONTH</h2>
       </div>
       <div>
         <ul className="transactions-list">
           {data.map((transactions, key) => {
+            console.log(transactions.date, transactions.description);
             return (
               <li className="transaction-row" key={key}>
                 <div>
