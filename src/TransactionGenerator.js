@@ -7,9 +7,9 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
     event.preventDefault();
     const newTransactions = [
       {
-        id: 4,
+        id: data.length + 1,
         description: "Gehalt",
-        amount: 50.0,
+        amount: Math.floor(Math.random() * 100),
         currency: "EUR",
         date: "2014-01-01T23:28:56.782Z",
         category: "Salary",
