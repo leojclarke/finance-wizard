@@ -29,7 +29,7 @@ export default function App() {
 
   function handleTransactionAdd(newTransactions) {
     console.log("added transaction");
-    newTransactions.sort((a, b) => a.id - b.id);
+    newTransactions.sort((a, b) => a.date - b.date);
     setTransactions(newTransactions);
   }
 

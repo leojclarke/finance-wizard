@@ -8,9 +8,9 @@
     "category": "Food shopping",
     "account": "Postbank",
     "payee": {
-      "shortname": "ALDI",
-      "longname": "ALDI 293 HH-Langenhorner Chaussee",
-      "imgsrc": "https://logo.clearbit.com/aldi-nord.de"
+      "shortName": "ALDI",
+      "longName": "ALDI 293 HH-Langenhorner Chaussee",
+      "imgSrc": "https://logo.clearbit.com/aldi-nord.de"
     },
     "reference": "djfhs-ldkjf234h-pozasd",
     "type": "expense"
@@ -24,9 +24,9 @@
     "category": "Food shopping",
     "account": "Postbank",
     "payee": {
-      "shortname": "Penny",
-      "longname": "Penny 53 HH-Troplowitz",
-      "imgsrc": "https://logo.clearbit.com/penny.de"
+      "shortName": "Penny",
+      "longName": "Penny 53 HH-Troplowitz",
+      "imgSrc": "https://logo.clearbit.com/penny.de"
     },
     "reference": "nvdhiur8-83thzd6-psldje",
     "type": "expense"
@@ -40,9 +40,9 @@
     "category": "Salary",
     "account": "Postbank",
     "payee": {
-      "shortname": "Apple",
-      "longname": "Apple Computer Industries",
-      "imgsrc": "https://logo.clearbit.com/apple.com"
+      "shortName": "Apple",
+      "longName": "Apple Computer Industries",
+      "imgSrc": "https://logo.clearbit.com/apple.com"
     },
     "reference": "Gehaltsabrechnung Oktober 2021",
     "type": "income"

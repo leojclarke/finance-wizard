@@ -2,41 +2,31 @@
   {
     "shortName": "Penny",
     "longName": "Penny 53 HH-Troplowitz",
-    "imgSrc": "//logo.clearbit.com/penny.de"
+    "imgSrc": "https://logo.clearbit.com/penny.de"
   },
   {
-    "shortName": "Penny",
-    "longName": "Penny 11 HH-Erdkampsweg",
-    "imgSrc": "//logo.clearbit.com/penny.de"
+    "shortName": "LIDL",
+    "longName": "Lidl 23 HH-Alsterkrugchaussee",
+    "imgSrc": "https://logo.clearbit.com/lidl.de"
   },
   {
-    "shortName": "Penny",
-    "longName": "Penny 23 HH-Fuhle",
-    "imgSrc": "//logo.clearbit.com/penny.de"
+    "shortName": "ALDI",
+    "longName": "ALDI 293 HH-Langenhorner Chaussee",
+    "imgSrc": "https://logo.clearbit.com/aldi-nord.de"
   },
   {
-    "shortName": "Penny",
-    "longName": "Penny 45 HH-Alsterdorf",
-    "imgSrc": "//logo.clearbit.com/penny.de"
+    "shortName": "Budni",
+    "longName": "Budnikowski 45 HH-Erdkampsweg",
+    "imgSrc": "https://logo.clearbit.com/budni.de"
   },
   {
-    "shortName": "REWE",
-    "longName": "REWE 53 HH-Troplowitz",
-    "imgSrc": "//logo.clearbit.com/rewe.de"
+    "shortName": "Rossmann",
+    "longName": "Rossmann 45 HH-Erdkampsweg",
+    "imgSrc": "https://logo.clearbit.com/rossmann.de"
   },
   {
-    "shortName": "REWE",
-    "longName": "REWE 11 HH-Erdkampsweg",
-    "imgSrc": "//logo.clearbit.com/rewe.de"
-  },
-  {
-    "shortName": "REWE",
-    "longName": "REWE 23 HH-Fuhle",
-    "imgSrc": "//logo.clearbit.com/rewe.de"
-  },
-  {
-    "shortName": "REWE",
-    "longName": "REWE 45 HH-Alsterdorf",
-    "imgSrc": "//logo.clearbit.com/penny.de"
+    "shortName": "MOP",
+    "longName": "Marc O' Polo",
+    "imgSrc": "https://logo.clearbit.com/marco-polo.com"
   }
 ]

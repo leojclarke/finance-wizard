@@ -19,14 +19,14 @@ export default function Transactions({
                 <div>
                   <img
                     className="transaction-logo"
-                    src={transactions.payee.imgsrc}
-                    alt={transactions.payee.shortname}
+                    src={transactions.payee.imgSrc}
+                    alt={transactions.payee.shortName}
                     width="60px"
                   />
                 </div>
                 <div className="transaction-description">
                   <p className="transaction-payee">
-                    {transactions.payee.shortname}
+                    {transactions.payee.shortName}
                   </p>
                   <p>{dateFormatter(transactions.date)}</p>
                 </div>
