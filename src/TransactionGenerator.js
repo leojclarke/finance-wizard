@@ -2,8 +2,6 @@ import React from "react";
 import payees from "./payees.json";
 
 export default function TransactionGenerator({ data, onTransactionAdd }) {
-  console.log("original Transactions: ", data);
-
   function handleTransactionGenerate(event) {
     event.preventDefault();
     function randomDate(start, end) {
@@ -27,7 +25,6 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
       },
       ...data,
     ];
-    console.log("new Transactions: ", newTransactions);
     onTransactionAdd(newTransactions);
   }
   return (

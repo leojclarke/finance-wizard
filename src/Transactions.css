@@ -8,11 +8,13 @@
 .transaction-row,
 .transaction-section-header {
   list-style: none;
+  max-width: 858px;
+  margin: auto;
+}
+.transaction-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 858px;
-  margin: auto;
 }
 
 .transactions-list {
