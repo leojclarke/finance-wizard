@@ -41,24 +41,23 @@ export default function Transactions({
     <section>
       <div className="transaction-section-header">
         {sortedDates.map((transactions, index) => {
-          console.log(transactions.name, index);
+          console.log(transactions);
           return (
             <>
-              <h2 className="transactions-month-header" key={transactions.name}>
-                {transactions.name}
-              </h2>
-              <div key={index}>
+              <div className="transaction-month-header">
+                <h2 key={transactions.name}>{transactions.name}</h2>
+              </div>
+              <div className="transactions-list-container" key={index}>
                 {transactions.entries.map((entry) => {
                   console.log(entry.id);
                   return (
                     <ul className="transactions-list" key={entry.id}>
                       <li className="transaction-row">
-                        <div>
+                        <div className="transaction-logo-container">
                           <img
                             className="transaction-logo"
                             src={entry.payee.imgSrc}
                             alt={entry.payee.shortName}
-                            width="60px"
                           />
                         </div>
                         <div className="transaction-description">
