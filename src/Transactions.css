@@ -1,13 +1,13 @@
 .transaction-month-header {
   font-size: 0.6rem;
   font-weight: 500;
-  color: hotpink;
+  color: black;
   text-align: left;
 }
 
 .transaction-month-header h2 {
   margin: 0;
-  padding: 0;
+  padding: 50px 0 7px 0;
 }
 
 .transactions-list {
@@ -28,6 +28,10 @@
   justify-content: space-between;
   background: #ffffff;
   border-bottom: 1px #ddd solid;
+}
+
+.transaction-row :hover {
+  background: #cdcdcd;
 }
 
 .transaction-logo {
