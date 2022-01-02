@@ -48,11 +48,11 @@ export default function Transactions({
                 <h2 key={transactions.name}>{transactions.name}</h2>
               </div>
               <div className="transactions-list-container" key={index}>
-                {transactions.entries.map((entry) => {
-                  console.log(entry.id);
-                  return (
-                    <ul className="transactions-list" key={entry.id}>
-                      <li className="transaction-row">
+                <ul className="transactions-list">
+                  {transactions.entries.map((entry) => {
+                    console.log(entry.id);
+                    return (
+                      <li className="transaction-row" key={entry.id}>
                         <div className="transaction-logo-container">
                           <img
                             className="transaction-logo"
@@ -70,9 +70,9 @@ export default function Transactions({
                           <p>{currencyFormatter(entry.amount)}</p>
                         </div>
                       </li>
-                    </ul>
-                  );
-                })}
+                    );
+                  })}
+                </ul>
               </div>
             </>
           );
