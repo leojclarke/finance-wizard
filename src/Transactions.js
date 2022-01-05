@@ -6,41 +6,10 @@ export default function Transactions({
   dateFormatter,
   currencyFormatter,
 }) {
-  data.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const sortedDates = [];
-
-  data.forEach((entry) => {
-    const date = new Date(entry.date);
-    const month = months[date.getMonth()];
-    const monthObj = sortedDates.find(
-      (datesByMonth) => datesByMonth.name === month
-    );
-
-    monthObj === undefined
-      ? sortedDates.push({ name: month, entries: [entry] })
-      : monthObj.entries.push(entry);
-  });
-
   return (
     <section>
       <div className="transaction-section-header">
-        {sortedDates.map((transactions) => {
+        {data.map((transactions) => {
           return (
             <div key={transactions.name}>
               <h2 className="transactions-month-header">{transactions.name}</h2>

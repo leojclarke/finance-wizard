@@ -32,15 +32,47 @@ export default function App() {
 
   function handleTransactionAdd(newTransactions) {
     newTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
-    console.log({ newTransactions });
     setTransactions(newTransactions);
   }
 
-  function handleTransactionsDisplay(slicedTransactions) {
-    slicedTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
-    console.log({ slicedTransactions });
+  function handleTransactionsGroup(data) {
+    data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    setTransactions(slicedTransactions);
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const groupedTransactions = [];
+
+    data.forEach((entry) => {
+      const date = new Date(entry.date);
+      const month = months[date.getMonth()];
+      const monthObj = groupedTransactions.find(
+        (datesByMonth) => datesByMonth.name === month
+      );
+
+      monthObj === undefined
+        ? groupedTransactions.push({ name: month, entries: [entry] })
+        : monthObj.entries.push(entry);
+    });
+
+    console.log({ groupedTransactions });
+    return groupedTransactions;
+  }
+
+  function handleTransactionsExpand(expandedTransactions) {
+    console.log({ expandedTransactions });
   }
 
   return (
@@ -53,10 +85,10 @@ export default function App() {
         />
         <TransactionsSlicer
           data={transactions}
-          onTransactionsSlice={handleTransactionsDisplay}
+          onTransactionsExpand={handleTransactionsExpand}
         />
         <TransactionList
-          data={transactions}
+          data={handleTransactionsGroup(transactions)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
         />

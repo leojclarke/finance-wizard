@@ -1,16 +1,16 @@
 import React from "react";
 
-export default function TransactionsSlicer({ data, onTransactionsSlice }) {
-  function handleTransactionsSlice(event, sliceAmount) {
+export default function TransactionsSlicer({ data, onTransactionsExpand }) {
+  function handleTransactionsExpand(event) {
     event.preventDefault();
-    sliceAmount = 10;
-    let slicedTransactions = data.slice(0, sliceAmount);
-    onTransactionsSlice(slicedTransactions);
-    console.log(slicedTransactions);
+    let expandedTransactions = data.slice(0, 4);
+    onTransactionsExpand(expandedTransactions);
   }
   return (
     <div>
-      <button onClick={(event) => handleTransactionsSlice(event)}>SLICE</button>
+      <button onClick={(event) => handleTransactionsExpand(event)}>
+        SLICE
+      </button>
     </div>
   );
 }

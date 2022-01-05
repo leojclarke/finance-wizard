@@ -11,6 +11,7 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
     }
 
     const newTransactions = [
+      ...data,
       {
         id: data.length + 1,
         description: "Shopping",
@@ -23,8 +24,8 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
         reference: "Generated Entry",
         type: "Expense",
       },
-      ...data,
     ];
+    console.log({ newTransactions });
     onTransactionAdd(newTransactions);
   }
   return (
