@@ -28,29 +28,31 @@ export default function Transactions({
   data.forEach((entry) => {
     const date = new Date(entry.date);
     const month = months[date.getMonth()];
-    const monthObj = sortedDates.find(
+    const monthObject = sortedDates.find(
       (datesByMonth) => datesByMonth.name === month
     );
 
-    monthObj === undefined
-      ? sortedDates.push({ name: month, entries: [entry] })
-      : monthObj.entries.push(entry);
+    monthObject === undefined
+      ? sortedDates.push({
+          id: Math.random() * 1,
+          name: month,
+          entries: [entry],
+        })
+      : monthObject.entries.push(entry);
   });
 
   return (
     <section>
       <div className="transaction-section-header">
         {sortedDates.map((transactions, index) => {
-          console.log(transactions);
           return (
-            <>
+            <div key={transactions.id}>
               <div className="transaction-month-header">
-                <h2 key={transactions.name}>{transactions.name}</h2>
+                <h2>{transactions.name}</h2>
               </div>
-              <div className="transactions-list-container" key={index}>
+              <div className="transactions-list-container">
                 <ul className="transactions-list">
                   {transactions.entries.map((entry) => {
-                    console.log(entry.id);
                     return (
                       <li className="transaction-row" key={entry.id}>
                         <div className="transaction-logo-container">
@@ -74,7 +76,7 @@ export default function Transactions({
                   })}
                 </ul>
               </div>
-            </>
+            </div>
           );
         })}
       </div>

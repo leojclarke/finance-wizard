@@ -1,6 +1,5 @@
 import "./App.css";
 import { getLocal, setLocal } from "./utils/services";
-
 import Header from "./Header";
 import TransactionGenerator from "./TransactionGenerator";
 import TransactionList from "./Transactions";
