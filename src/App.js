@@ -2,10 +2,11 @@ import "./App.css";
 import { getLocal, setLocal } from "./utils/services";
 
 import Header from "./Header";
-import TransactionGenerator from "./TransactionGenerator";
+import TransactionGenerator from "./TransactionsGenerator";
 import TransactionList from "./Transactions";
 import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
+import TransactionsSlicer from "./TransactionsSlicer";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -31,7 +32,15 @@ export default function App() {
 
   function handleTransactionAdd(newTransactions) {
     newTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+    console.log({ newTransactions });
     setTransactions(newTransactions);
+  }
+
+  function handleTransactionsDisplay(slicedTransactions) {
+    slicedTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
+    console.log({ slicedTransactions });
+
+    setTransactions(slicedTransactions);
   }
 
   return (
@@ -41,6 +50,10 @@ export default function App() {
         <TransactionGenerator
           data={transactions}
           onTransactionAdd={handleTransactionAdd}
+        />
+        <TransactionsSlicer
+          data={transactions}
+          onTransactionsSlice={handleTransactionsDisplay}
         />
         <TransactionList
           data={transactions}

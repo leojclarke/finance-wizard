@@ -40,16 +40,12 @@ export default function Transactions({
   return (
     <section>
       <div className="transaction-section-header">
-        {sortedDates.map((transactions, index) => {
-          console.log(transactions.name, index);
+        {sortedDates.map((transactions) => {
           return (
-            <>
-              <h2 className="transactions-month-header" key={transactions.name}>
-                {transactions.name}
-              </h2>
-              <div key={index}>
+            <div key={transactions.name}>
+              <h2 className="transactions-month-header">{transactions.name}</h2>
+              <div>
                 {transactions.entries.map((entry) => {
-                  console.log(entry.id);
                   return (
                     <ul className="transactions-list" key={entry.id}>
                       <li className="transaction-row">
@@ -75,7 +71,7 @@ export default function Transactions({
                   );
                 })}
               </div>
-            </>
+            </div>
           );
         })}
       </div>
