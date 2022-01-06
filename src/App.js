@@ -6,7 +6,7 @@ import TransactionGenerator from "./TransactionsGenerator";
 import TransactionList from "./Transactions";
 import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
-import TransactionsSlicer from "./TransactionsSlicer";
+import TransactionsExpander from "./TransactionsExpander";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -83,14 +83,14 @@ export default function App() {
           data={transactions}
           onTransactionAdd={handleTransactionAdd}
         />
-        <TransactionsSlicer
-          data={transactions}
-          onTransactionsExpand={handleTransactionsExpand}
-        />
         <TransactionList
           data={handleTransactionsGroup(transactions)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
+        />
+        <TransactionsExpander
+          data={transactions}
+          onTransactionsExpand={handleTransactionsExpand}
         />
       </main>
     </div>

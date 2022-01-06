@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TransactionsSlicer({ data, onTransactionsExpand }) {
+export default function TransactionsExpander({ data, onTransactionsExpand }) {
   function handleTransactionsExpand(event) {
     event.preventDefault();
     let expandedTransactions = data.slice(0, 4);
