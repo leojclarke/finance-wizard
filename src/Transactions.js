@@ -5,11 +5,13 @@ export default function Transactions({
   data,
   dateFormatter,
   currencyFormatter,
+  transactionsGrouper,
 }) {
+  console.log({ data });
   return (
     <section>
       <div className="transaction-section-header">
-        {data.map((transactions) => {
+        {transactionsGrouper(data).map((transactions) => {
           return (
             <div key={transactions.name}>
               <h2 className="transactions-month-header">{transactions.name}</h2>

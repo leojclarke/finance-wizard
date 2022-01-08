@@ -1,16 +1,10 @@
 import React from "react";
 
-export default function TransactionsExpander({ data, onTransactionsExpand }) {
-  function handleTransactionsExpand(event) {
-    event.preventDefault();
-    let expandedTransactions = data.slice(0, 4);
-    onTransactionsExpand(expandedTransactions);
-  }
+export default function TransactionsExpander({ onTransactionsExpand }) {
+  let sliceAmount = 5;
   return (
     <div>
-      <button onClick={(event) => handleTransactionsExpand(event)}>
-        SLICE
-      </button>
+      <button onClick={() => onTransactionsExpand(sliceAmount++)}>SLICE</button>
     </div>
   );
 }

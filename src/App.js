@@ -36,6 +36,7 @@ export default function App() {
   }
 
   function handleTransactionsGroup(data) {
+    console.log({ data });
     data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const months = [
@@ -71,8 +72,10 @@ export default function App() {
     return groupedTransactions;
   }
 
-  function handleTransactionsExpand(expandedTransactions) {
-    console.log({ expandedTransactions });
+  function handleTransactionsDisplay(data, sliceAmount) {
+    console.log({ sliceAmount });
+    console.log(data.slice(0, sliceAmount));
+    return sliceAmount ? data.slice(0, sliceAmount) : data.slice(0, 5);
   }
 
   return (
@@ -84,13 +87,14 @@ export default function App() {
           onTransactionAdd={handleTransactionAdd}
         />
         <TransactionList
-          data={handleTransactionsGroup(transactions)}
+          data={handleTransactionsDisplay(transactions)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
+          transactionsGrouper={handleTransactionsGroup}
         />
         <TransactionsExpander
           data={transactions}
-          onTransactionsExpand={handleTransactionsExpand}
+          onTransactionsExpand={handleTransactionsDisplay}
         />
       </main>
     </div>
