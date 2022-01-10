@@ -1,8 +1,28 @@
 .transaction-month-header {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: hotpink;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: black;
   text-align: left;
+}
+
+.transaction-month-header h2 {
+  margin: 0;
+  padding: 50px 0 7px 0;
+}
+
+.transactions-list {
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.transactions-list li:first-of-type {
+  border-radius: 10px 10px 0 0;
+}
+
+.transactions-list li:last-of-type {
+  border-radius: 0 0 10px 10px;
 }
 
 .transaction-row,
@@ -11,25 +31,26 @@
   max-width: 858px;
   margin: auto;
 }
+
 .transaction-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.transactions-list {
-  margin: 0;
-  padding: 0;
-}
-
-.transaction-row {
   background: #ffffff;
   border-bottom: 1px #ddd solid;
 }
 
 .transaction-logo {
-  padding: 5px;
   border-radius: 10px;
+  width: 50px;
+  padding: 5px;
+}
+
+.transaction-logo-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: auto;
 }
 
 .transaction-description {
@@ -37,7 +58,7 @@
   text-align: left;
   align-items: center;
   justify-content: left;
-  min-width: 600px;
+  min-width: 650px;
 }
 
 .transaction-description p {
