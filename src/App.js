@@ -46,7 +46,7 @@ export default function App() {
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
         />
-      </main>
+      </main>{" "}
     </div>
   );
 }

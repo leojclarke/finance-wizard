@@ -28,14 +28,15 @@ export default function Transactions({
   data.forEach((entry) => {
     const date = new Date(entry.date);
     const month = months[date.getMonth()];
+    const year = date.getFullYear();
     const monthObject = sortedDates.find(
-      (datesByMonth) => datesByMonth.name === month
+      (datesByMonthAndYear) => datesByMonthAndYear.name === month + " " + year
     );
 
     monthObject === undefined
       ? sortedDates.push({
           id: Math.random() * 1,
-          name: month,
+          name: month + " " + year,
           entries: [entry],
         })
       : monthObject.entries.push(entry);
@@ -51,7 +52,13 @@ export default function Transactions({
                 <h2>{transactions.name}</h2>
               </div>
               <div className="transactions-list-container">
-                <ul className="transactions-list">
+                <ul
+                  className={
+                    transactions.entries.length > 1
+                      ? "transactions-list"
+                      : "transactions-short-list"
+                  }
+                >
                   {transactions.entries.map((entry) => {
                     return (
                       <li className="transaction-row" key={entry.id}>
