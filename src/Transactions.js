@@ -7,7 +7,6 @@ export default function Transactions({
   currencyFormatter,
   transactionsGrouper,
 }) {
-  console.log({ data });
   return (
     <section>
       <div className="transaction-section-header">

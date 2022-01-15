@@ -6,7 +6,6 @@ import TransactionGenerator from "./TransactionsGenerator";
 import TransactionList from "./Transactions";
 import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
-import TransactionsExpander from "./TransactionsExpander";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -14,8 +13,10 @@ export default function App() {
   const [transactions, setTransactions] = useState(
     getLocal("transactions") || sampleTransactions
   );
+  const [count, setCount] = useState(5);
 
   useEffect(() => setLocal("transactions", transactions), [transactions]);
+  useEffect(() => setLocal("count", count), [count]);
 
   const getFormattedDate = (dateStr) => {
     const date = new Date(dateStr);
@@ -36,7 +37,6 @@ export default function App() {
   }
 
   function handleTransactionsGroup(data) {
-    console.log({ data });
     data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const months = [
@@ -68,14 +68,12 @@ export default function App() {
         : monthObj.entries.push(entry);
     });
 
-    console.log({ groupedTransactions });
     return groupedTransactions;
   }
 
-  function handleTransactionsDisplay(data, sliceAmount) {
-    console.log({ sliceAmount });
-    console.log(data.slice(0, sliceAmount));
-    return sliceAmount ? data.slice(0, sliceAmount) : data.slice(0, 5);
+  function handleTransactionsDisplay(data, count) {
+    console.log({ count });
+    return data.slice(0, count);
   }
 
   return (
@@ -87,15 +85,12 @@ export default function App() {
           onTransactionAdd={handleTransactionAdd}
         />
         <TransactionList
-          data={handleTransactionsDisplay(transactions)}
+          data={handleTransactionsDisplay(transactions, count)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
           transactionsGrouper={handleTransactionsGroup}
         />
-        <TransactionsExpander
-          data={transactions}
-          onTransactionsExpand={handleTransactionsDisplay}
-        />
+        <button onClick={() => setCount(count + 1)}>EXPAND</button>
       </main>
     </div>
   );
