@@ -5,6 +5,7 @@ import TransactionGenerator from "./TransactionGenerator";
 import TransactionList from "./Transactions";
 import sampleTransactions from "./data.json";
 import { useState, useEffect } from "react";
+import { Routes } from "react-router-dom";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -35,18 +36,20 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header />
-      <main>
-        <TransactionGenerator
-          data={transactions}
-          onTransactionAdd={handleTransactionAdd}
-        />
-        <TransactionList
-          data={transactions}
-          dateFormatter={getFormattedDate}
-          currencyFormatter={getFormattedAmount}
-        />
-      </main>
+      <Routes>
+        <Header />
+        <main>
+          <TransactionGenerator
+            data={transactions}
+            onTransactionAdd={handleTransactionAdd}
+          />
+          <TransactionList
+            data={transactions}
+            dateFormatter={getFormattedDate}
+            currencyFormatter={getFormattedAmount}
+          />
+        </main>
+      </Routes>
     </div>
   );
 }
