@@ -24,7 +24,6 @@ export default function Transactions({
                             className="transaction-logo"
                             src={entry.payee.imgSrc}
                             alt={entry.payee.shortName}
-                            width="60px"
                           />
                         </div>
                         <div className="transaction-description">

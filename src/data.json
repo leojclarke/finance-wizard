@@ -2,7 +2,7 @@
   {
     "id": 1,
     "description": "Aldi sagt danke",
-    "amount": 12.5,
+    "amount": -12.5,
     "currency": "EUR",
     "date": "2021-12-09T08:28:56.782Z",
     "category": "Food shopping",
@@ -18,7 +18,7 @@
   {
     "id": 2,
     "description": "Penny sagt danke",
-    "amount": 24.5,
+    "amount": -24.5,
     "currency": "EUR",
     "date": "2021-12-01T23:28:56.782Z",
     "category": "Food shopping",
@@ -34,9 +34,9 @@
   {
     "id": 3,
     "description": "Gehalt",
-    "amount": 5.0,
+    "amount": 5000.0,
     "currency": "EUR",
-    "date": "2014-01-01T23:28:56.782Z",
+    "date": "2021-01-01T23:28:56.782Z",
     "category": "Salary",
     "account": "Postbank",
     "payee": {
