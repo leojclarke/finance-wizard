@@ -5,57 +5,21 @@ export default function Transactions({
   data,
   dateFormatter,
   currencyFormatter,
+  transactionsGrouper,
 }) {
-  data.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  const sortedDates = [];
-
-  data.forEach((entry) => {
-    const date = new Date(entry.date);
-    const month = months[date.getMonth()];
-    const monthObject = sortedDates.find(
-      (datesByMonth) => datesByMonth.name === month
-    );
-
-    monthObject === undefined
-      ? sortedDates.push({
-          id: Math.random() * 1,
-          name: month,
-          entries: [entry],
-        })
-      : monthObject.entries.push(entry);
-  });
-
   return (
     <section>
       <div className="transaction-section-header">
-        {sortedDates.map((transactions, index) => {
+        {transactionsGrouper(data).map((transactions) => {
           return (
-            <div key={transactions.id}>
-              <div className="transaction-month-header">
-                <h2>{transactions.name}</h2>
-              </div>
-              <div className="transactions-list-container">
-                <ul className="transactions-list">
-                  {transactions.entries.map((entry) => {
-                    return (
-                      <li className="transaction-row" key={entry.id}>
-                        <div className="transaction-logo-container">
+            <div key={transactions.name}>
+              <h2 className="transactions-month-header">{transactions.name}</h2>
+              <div>
+                {transactions.entries.map((entry) => {
+                  return (
+                    <ul className="transactions-list" key={entry.id}>
+                      <li className="transaction-row">
+                        <div>
                           <img
                             className="transaction-logo"
                             src={entry.payee.imgSrc}
@@ -72,9 +36,9 @@ export default function Transactions({
                           <p>{currencyFormatter(entry.amount)}</p>
                         </div>
                       </li>
-                    );
-                  })}
-                </ul>
+                    </ul>
+                  );
+                })}
               </div>
             </div>
           );
