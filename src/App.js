@@ -75,7 +75,6 @@ export default function App() {
   }
 
   function handleTransactionsDisplay(data, count) {
-    console.log({ count });
     return data.slice(0, count);
   }
 

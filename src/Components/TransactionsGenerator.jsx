@@ -25,7 +25,6 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
         type: "Expense",
       },
     ];
-    console.log({ newTransactions });
     onTransactionAdd(newTransactions);
   }
   return (
