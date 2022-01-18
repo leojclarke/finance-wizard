@@ -1,5 +1,5 @@
 import "./App.css";
-import { getLocal, setLocal } from "./utils/services";
+import { getLocal, setLocal } from "./Helpers/services";
 import Header from "./Header";
 import TransactionGenerator from "./TransactionsGenerator";
 import TransactionList from "./Transactions";
