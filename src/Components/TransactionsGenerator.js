@@ -1,5 +1,5 @@
 import React from "react";
-import payees from "./payees.json";
+import payees from "../Assets/JSON/payees.json";
 
 export default function TransactionGenerator({ data, onTransactionAdd }) {
   function handleTransactionGenerate(event) {
