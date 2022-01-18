@@ -24,7 +24,7 @@
     "category": "Food shopping",
     "account": "Postbank",
     "payee": {
-      "shortnName": "Penny",
+      "shortName": "Penny",
       "longName": "Penny 53 HH-Troplowitz",
       "imgSrc": "https://logo.clearbit.com/penny.de"
     },

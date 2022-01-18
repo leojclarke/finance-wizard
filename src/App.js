@@ -1,9 +1,8 @@
-import "./App.css";
-import { getLocal, setLocal } from "./utils/services";
-import Header from "./Header";
-import TransactionGenerator from "./TransactionsGenerator";
-import TransactionList from "./Transactions";
-import sampleTransactions from "./data.json";
+import { getLocal, setLocal } from "./Helpers/services";
+import Header from "./Components/Header.jsx";
+import TransactionGenerator from "./Components/TransactionsGenerator";
+import TransactionList from "./Components/Transactions";
+import sampleTransactions from "./Assets/JSON/data.json";
 import { useState, useEffect } from "react";
 
 export default function App() {
@@ -76,7 +75,6 @@ export default function App() {
   }
 
   function handleTransactionsDisplay(data, count) {
-    console.log({ count });
     return data.slice(0, count);
   }
 
@@ -88,13 +86,14 @@ export default function App() {
           data={transactions}
           onTransactionAdd={handleTransactionAdd}
         />
+        <button onClick={() => setCount(count + 1)}>EXPAND</button>
+
         <TransactionList
           data={handleTransactionsDisplay(transactions, count)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
           transactionsGrouper={handleTransactionsGroup}
         />
-        <button onClick={() => setCount(count + 1)}>EXPAND</button>
       </main>
     </div>
   );
