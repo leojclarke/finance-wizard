@@ -17,7 +17,7 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
         description: "Shopping",
         amount: Math.floor(Math.random() * 80) * -1,
         currency: "EUR",
-        date: randomDate(new Date(2019, 0, 1), new Date()).toJSON(),
+        date: randomDate(new Date(2022, 0, 1), new Date()).toJSON(),
         category: "Groceries",
         account: "Postbank",
         payee: payees[Math.floor(Math.random() * payees.length)],

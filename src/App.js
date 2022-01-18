@@ -58,13 +58,18 @@ export default function App() {
     data.forEach((entry) => {
       const date = new Date(entry.date);
       const month = months[date.getMonth()];
-      const monthObj = groupedTransactions.find(
-        (datesByMonth) => datesByMonth.name === month
+      const year = date.getFullYear();
+      const monthObject = groupedTransactions.find(
+        (datesByMonthAndYear) => datesByMonthAndYear.name === month + " " + year
       );
 
-      monthObj === undefined
-        ? groupedTransactions.push({ name: month, entries: [entry] })
-        : monthObj.entries.push(entry);
+      monthObject === undefined
+        ? groupedTransactions.push({
+            id: Math.random() * 1,
+            name: month + " " + year,
+            entries: [entry],
+          })
+        : monthObject.entries.push(entry);
     });
 
     return groupedTransactions;

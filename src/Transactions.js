@@ -12,14 +12,22 @@ export default function Transactions({
       <div className="transaction-section-header">
         {transactionsGrouper(data).map((transactions) => {
           return (
-            <div key={transactions.name}>
-              <h2 className="transactions-month-header">{transactions.name}</h2>
-              <div>
-                {transactions.entries.map((entry) => {
-                  return (
-                    <ul className="transactions-list" key={entry.id}>
-                      <li className="transaction-row">
-                        <div>
+            <div key={transactions.id}>
+              <div className="transaction-month-header">
+                <h2>{transactions.name}</h2>
+              </div>
+              <div className="transactions-list-container">
+                <ul
+                  className={
+                    transactions.entries.length > 1
+                      ? "transactions-list"
+                      : "transactions-short-list"
+                  }
+                >
+                  {transactions.entries.map((entry) => {
+                    return (
+                      <li className="transaction-row" key={entry.id}>
+                        <div className="transaction-logo-container">
                           <img
                             className="transaction-logo"
                             src={entry.payee.imgSrc}
@@ -36,9 +44,9 @@ export default function Transactions({
                           <p>{currencyFormatter(entry.amount)}</p>
                         </div>
                       </li>
-                    </ul>
-                  );
-                })}
+                    );
+                  })}
+                </ul>
               </div>
             </div>
           );
