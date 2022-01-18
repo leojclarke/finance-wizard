@@ -1,6 +1,5 @@
-import "./App.css";
 import { getLocal, setLocal } from "./Helpers/services";
-import Header from "./Components/Header";
+import Header from "./Components/Header.jsx";
 import TransactionGenerator from "./Components/TransactionsGenerator";
 import TransactionList from "./Components/Transactions";
 import sampleTransactions from "./Assets/JSON/data.json";
