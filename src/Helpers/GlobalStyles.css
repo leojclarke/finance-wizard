@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
+:root {
+  --responsive-base: 1;
+}
 
 body {
   margin: 0;
@@ -8,4 +11,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f6f6f6;
   text-align: center;
+}
+
+.btn-container {
+  padding-top: 120px;
+}
+
+button {
+  padding: 10px 20px;
+  margin-left: 20px;
 }

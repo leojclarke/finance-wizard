@@ -82,11 +82,13 @@ export default function App() {
     <div className="App">
       <Header />
       <main>
-        <TransactionGenerator
-          data={transactions}
-          onTransactionAdd={handleTransactionAdd}
-        />
-        <button onClick={() => setCount(count + 1)}>EXPAND</button>
+        <div className="btn-container">
+          <TransactionGenerator
+            data={transactions}
+            onTransactionAdd={handleTransactionAdd}
+          />
+          <button onClick={() => setCount(count + 1)}>EXPAND</button>
+        </div>
 
         <TransactionList
           data={handleTransactionsDisplay(transactions, count)}

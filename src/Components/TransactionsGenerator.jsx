@@ -28,14 +28,12 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
     onTransactionAdd(newTransactions);
   }
   return (
-    <div>
-      <button
-        onClick={(event) => {
-          handleTransactionGenerate(event);
-        }}
-      >
-        GENERATE
-      </button>
-    </div>
+    <button
+      onClick={(event) => {
+        handleTransactionGenerate(event);
+      }}
+    >
+      GENERATE
+    </button>
   );
 }
