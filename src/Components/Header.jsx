@@ -1,12 +1,15 @@
+import { useScrollHandler } from "../Hooks/customHooks";
 import "./Header.css";
 
 export default function Header() {
+  const scroll = useScrollHandler();
+
   return (
-    <header className="App-header">
+    <header className={scroll ? "App-header" : "App-header box-shadow"}>
       <div className="nav-container">
         <div className="nav-left">
           <img
-            src="https://logo.clearbit.com/nike.com"
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/google/313/man-mage_1f9d9-200d-2642-fe0f.png"
             alt="fw-logo"
             width="70px"
           />

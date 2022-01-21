@@ -1,14 +1,19 @@
 .App-header {
-  background-color: #3c318f;
+  background: #f6f6f6;
   width: 100vw;
   height: 85px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #1a202c;
   font-weight: 700;
   position: fixed;
+}
+
+.box-shadow {
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
