@@ -81,7 +81,7 @@ export default function App() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <main className="main">
         <div className="btn-container">
           <TransactionGenerator
             data={transactions}

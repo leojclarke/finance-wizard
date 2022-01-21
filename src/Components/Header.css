@@ -15,25 +15,30 @@
   display: flex;
   width: 100%;
   height: 100%;
-
   align-items: center;
   justify-content: space-around;
 }
 
 .nav-left {
   display: flex;
-  width: 90%;
+  position: absolute;
+  top: 1;
+  left: 0;
   margin-left: 50px;
 }
 
 .nav-middle {
   display: flex;
-  min-width: 858px;
+  width: 895px;
+  align-items: center;
 }
 
 .nav-right {
   display: flex;
-  width: 90%;
+  position: absolute;
+  top: 1;
+  right: 0;
+  width: auto;
   margin-right: 50px;
   justify-content: flex-end;
 }
@@ -48,4 +53,21 @@
 
 .nav-item {
   padding: 20px 30px 20px 0px;
+}
+
+.balance-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 858px;
+  margin-left: 20px;
+}
+
+.amount {
+  font-size: 1rem;
+}
+
+.description {
+  font-size: 0.6rem;
 }
