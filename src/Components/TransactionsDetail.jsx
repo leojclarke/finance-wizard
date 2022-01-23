@@ -1,7 +1,13 @@
 import React from "react";
 import "./TransactionsDetail.css";
 
-export default function TransactionsDetail() {
+export default function TransactionsDetail({
+  data,
+  dateFormatter,
+  currencyFormatter,
+}) {
+  const entry = data[0];
+
   return (
     <div className="transaction-detail-container">
       <section className="transaction-detail-section">
@@ -11,9 +17,9 @@ export default function TransactionsDetail() {
           alt="vendor logo"
           width="70px"
         />
-        <p className="vendor">REWE</p>
-        <p className="amount-detail">-€24,00</p>
-        <p className="date">Wednesday, 2nd January 2022, 1:30 PM</p>
+        <p className="vendor">{entry.payee.shortName}</p>
+        <p className="amount-detail">{currencyFormatter(entry.amount)}</p>
+        <p className="date">{entry.date}</p>
 
         <h2 className="transaction-detail-header">Details</h2>
         <div className="detail-list-container">
@@ -44,7 +50,7 @@ export default function TransactionsDetail() {
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Vendor</p>
-                <p className="description">Penny Troplowitz ohG</p>
+                <p className="description">{entry.payee.longName}</p>
               </div>
               <div className="transaction-detail-further"></div>
             </li>

@@ -83,7 +83,11 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main">
-        <TransactionsDetail />
+        <TransactionsDetail
+          data={transactions}
+          dateFormatter={getFormattedDate}
+          currencyFormatter={getFormattedAmount}
+        />
         <div className="btn-container">
           <TransactionGenerator
             data={transactions}
