@@ -40,7 +40,7 @@
 .transaction-section-header {
   list-style: none;
   max-width: 858px;
-  margin: auto;
+  margin: auto 0;
 }
 
 .transaction-row {

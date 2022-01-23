@@ -1,0 +1,119 @@
+.transaction-detail-container {
+  display: flex;
+  padding-top: 100px;
+}
+
+.transaction-detail-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 895px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vendor-logo {
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.vendor {
+  font-weight: 500;
+  margin: 0;
+}
+
+.amount-detail {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.date {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  text-align: left;
+}
+
+.transaction-detail-header {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: black;
+  text-align: left;
+}
+
+.detail-list-container {
+  min-width: 458px;
+}
+
+.transactions-detail-list {
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.transactions-detail-list li:first-of-type {
+  border-radius: 10px 10px 0 0;
+}
+
+.transactions-detail-list li:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+
+.transaction-detail-row {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #ffffff;
+  border-bottom: 1px #ddd solid;
+}
+
+.transaction-icon-column {
+  align-items: center;
+  margin-left: 10px;
+}
+
+.icon {
+  background: purple;
+  color: #fff;
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.transaction-detail-column {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 15px 10px;
+}
+
+.label {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: darkslategray;
+  margin: 0;
+}
+
+.transaction-detail-further {
+  text-align: right;
+  padding: 10px 20px;
+}
