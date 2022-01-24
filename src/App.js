@@ -1,10 +1,10 @@
 import { getLocal, setLocal } from "./Helpers/services";
+import { useState, useEffect } from "react";
+import sampleTransactions from "./Assets/JSON/data.json";
 import Header from "./Components/Header.jsx";
+import TransactionsDetail from "./Components/TransactionsDetail";
 import TransactionGenerator from "./Components/TransactionsGenerator";
 import TransactionList from "./Components/Transactions";
-import sampleTransactions from "./Assets/JSON/data.json";
-import { useState, useEffect } from "react";
-import TransactionsDetail from "./Components/TransactionsDetail";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -30,12 +30,12 @@ export default function App() {
     }).format(amount);
   };
 
-  function handleTransactionAdd(newTransactions) {
+  const handleTransactionAdd = (newTransactions) => {
     newTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
     setTransactions(newTransactions);
-  }
+  };
 
-  function handleTransactionsGroup(data) {
+  const handleTransactionsGroup = (data) => {
     data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     const months = [
@@ -73,11 +73,11 @@ export default function App() {
     });
 
     return groupedTransactions;
-  }
+  };
 
-  function handleTransactionsDisplay(data, count) {
+  const handleTransactionsDisplay = (data, count) => {
     return data.slice(0, count);
-  }
+  };
 
   return (
     <div className="App">
