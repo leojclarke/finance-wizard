@@ -17,3 +17,11 @@ body {
 .btn-container {
   padding-top: 120px;
 }
+
+.page-header {
+  font-size: 3em;
+  font-weight: 800;
+  padding-top: 100px;
+  margin: 0;
+  text-align: left;
+}

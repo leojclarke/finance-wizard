@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useScrollHandler } from "../Hooks/customHooks";
 import "./Header.css";
 
@@ -22,8 +23,12 @@ export default function Header() {
         </div>
         <nav className="nav-right">
           <ul className="nav-items-container">
-            <li className="nav-item">Overview</li>
-            <li className="nav-item">Accounts</li>
+            <li className="nav-item">
+              <Link to="/">Overview</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/accounts">Accounts</Link>
+            </li>
             <li className="nav-item">Analysis</li>
             <li className="nav-item">My Account</li>
           </ul>
