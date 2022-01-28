@@ -6,25 +6,25 @@ export default function TransactionRow({
   dateFormatter,
   currencyFormatter,
 }) {
-  console.log({ item });
   return (
-    <li className="transaction-row" key={item.id}>
-      <div className="transaction-logo-container">
-        <img
-          className="transaction-logo"
-          src={item.payee.imgSrc}
-          alt={item.payee.shortName}
-        />
-      </div>
-      <div className="transaction-description">
-        <Link to={"detail/" + item.id}>
+    <Link to={"detail/" + item.id} key={item.id}>
+      <li className="transaction-row">
+        <div className="transaction-logo-container">
+          <img
+            className="transaction-logo"
+            src={item.payee.imgSrc}
+            alt={item.payee.shortName}
+          />
+        </div>
+        <div className="transaction-description">
           <p className="transaction-payee">{item.payee.shortName}</p>
-        </Link>
-        <p>{dateFormatter(item.date)}</p>
-      </div>
-      <div className="transaction-amount">
-        <p>{currencyFormatter(item.amount)}</p>
-      </div>
-    </li>
+
+          <p>{dateFormatter(item.date)}</p>
+        </div>
+        <div className="transaction-amount">
+          <p>{currencyFormatter(item.amount)}</p>
+        </div>
+      </li>
+    </Link>
   );
 }

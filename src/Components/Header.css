@@ -1,5 +1,5 @@
 .App-header {
-  background: #f6f6f6;
+  background: #fafafa;
   width: 100vw;
   height: 85px;
   display: flex;
@@ -36,6 +36,7 @@
   display: flex;
   width: 895px;
   align-items: center;
+  text-align: left;
 }
 
 .nav-right {
@@ -66,7 +67,6 @@
   align-items: flex-start;
   justify-content: center;
   max-width: 858px;
-  margin-left: 20px;
 }
 
 .amount {
