@@ -2,9 +2,7 @@ import { getLocal, setLocal } from "./Helpers/services";
 import { useState, useEffect } from "react";
 import sampleTransactions from "./Assets/JSON/data.json";
 import Header from "./Components/Header.jsx";
-import TransactionsDetail from "./Components/TransactionsDetail";
-import TransactionGenerator from "./Components/TransactionsGenerator";
-import TransactionList from "./Components/Transactions";
+import Home from "./Pages";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -83,24 +81,14 @@ export default function App() {
     <div className="App">
       <Header />
       <main className="main">
-        <TransactionsDetail
-          data={transactions}
-          dateFormatter={getFormattedDate}
-          currencyFormatter={getFormattedAmount}
-        />
-        <div className="btn-container">
-          <TransactionGenerator
-            data={transactions}
-            onTransactionAdd={handleTransactionAdd}
-          />
-          <button onClick={() => setCount(count + 1)}>EXPAND</button>
-        </div>
-
-        <TransactionList
+        <Home
           data={handleTransactionsDisplay(transactions, count)}
           dateFormatter={getFormattedDate}
           currencyFormatter={getFormattedAmount}
           transactionsGrouper={handleTransactionsGroup}
+          onTransactionAdd={handleTransactionAdd}
+          setCount={setCount}
+          count={count}
         />
       </main>
     </div>
