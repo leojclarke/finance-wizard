@@ -1,5 +1,6 @@
 import React from "react";
 import payees from "../Assets/JSON/payees.json";
+import Button from "./Button";
 
 export default function TransactionGenerator({ data, onTransactionAdd }) {
   function handleTransactionGenerate(event) {
@@ -28,12 +29,11 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
     onTransactionAdd(newTransactions);
   }
   return (
-    <button
+    <Button
       onClick={(event) => {
         handleTransactionGenerate(event);
       }}
-    >
-      GENERATE
-    </button>
+      text={"Generate"}
+    />
   );
 }

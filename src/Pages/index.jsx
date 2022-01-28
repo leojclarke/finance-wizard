@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Components/Button";
 import Transactions from "../Components/Transactions";
 import TransactionGenerator from "../Components/TransactionsGenerator";
 
@@ -15,7 +16,7 @@ export default function Home({
     <>
       <div className="btn-container">
         <TransactionGenerator data={data} onTransactionAdd={onTransactionAdd} />
-        <button onClick={() => setCount(count + 1)}>EXPAND</button>
+        <Button onClick={() => setCount(count + 1)} text={"Load more"} />
       </div>
 
       <Transactions
