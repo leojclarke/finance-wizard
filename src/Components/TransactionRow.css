@@ -1,0 +1,46 @@
+a {
+  text-decoration: none;
+}
+
+.transaction-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1px #ddd solid;
+}
+
+.transaction-logo {
+  border-radius: 10px;
+  width: 50px;
+  padding: 10px 5px;
+}
+
+.transaction-logo-container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: auto;
+}
+
+.transaction-description {
+  padding: 0 10px;
+  text-align: left;
+  align-items: center;
+  justify-content: left;
+  min-width: 650px;
+}
+
+.transaction-description p {
+  margin: 0;
+}
+
+.transaction-payee {
+  font-weight: 700;
+}
+
+.transaction-amount {
+  text-align: right;
+  min-width: 100px;
+  padding-right: 10px;
+}
