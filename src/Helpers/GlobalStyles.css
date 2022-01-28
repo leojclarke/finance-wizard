@@ -18,7 +18,10 @@ body {
   padding-top: 120px;
 }
 
-button {
-  padding: 10px 20px;
-  margin-left: 20px;
+.page-header {
+  font-size: 3em;
+  font-weight: 800;
+  padding-top: 100px;
+  margin: 0;
+  text-align: left;
 }
