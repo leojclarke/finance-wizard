@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function TransactionRow({
   item,
@@ -15,7 +16,9 @@ export default function TransactionRow({
         />
       </div>
       <div className="transaction-description">
-        <p className="transaction-payee">{item.payee.shortName}</p>
+        <Link to="detail">
+          <p className="transaction-payee">{item.payee.shortName}</p>
+        </Link>
         <p>{dateFormatter(item.date)}</p>
       </div>
       <div className="transaction-amount">

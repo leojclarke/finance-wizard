@@ -2,6 +2,7 @@ import { getLocal, setLocal } from "./Helpers/services";
 import { useState, useEffect } from "react";
 import sampleTransactions from "./Assets/JSON/data.json";
 import Header from "./Components/Header.jsx";
+import TransactionsDetail from "./Components/TransactionsDetail";
 import Home from "./Pages";
 import { Route, Routes } from "react-router-dom";
 import Accounts from "./Pages/accounts";
@@ -95,6 +96,16 @@ export default function App() {
                 onTransactionAdd={handleTransactionAdd}
                 setCount={setCount}
                 count={count}
+              />
+            }
+          />
+          <Route
+            path="/detail"
+            element={
+              <TransactionsDetail
+                data={transactions}
+                dateFormatter={getFormattedDate}
+                currencyFormatter={getFormattedAmount}
               />
             }
           />
