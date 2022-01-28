@@ -8,6 +8,7 @@ export default function Home({
   dateFormatter,
   currencyFormatter,
   transactionsGrouper,
+  transactionsDisplay,
   onTransactionAdd,
   setCount,
   count,
@@ -20,7 +21,7 @@ export default function Home({
       </div>
 
       <Transactions
-        data={data}
+        data={transactionsDisplay(data, count)}
         dateFormatter={dateFormatter}
         currencyFormatter={currencyFormatter}
         transactionsGrouper={transactionsGrouper}

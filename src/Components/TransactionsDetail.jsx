@@ -1,19 +1,18 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { getTransaction } from "../Helpers/services";
 import "./TransactionsDetail.css";
 
-export default function TransactionsDetail({
-  data,
-  dateFormatter,
-  currencyFormatter,
-}) {
-  const entry = data[0];
+export default function TransactionsDetail({ data, currencyFormatter }) {
+  let params = useParams();
+  let entry = getTransaction(parseInt(params.transactionId), data);
 
   return (
     <div className="transaction-detail-container">
       <section className="transaction-detail-section">
         <img
           className="vendor-logo"
-          src="https://logo.clearbit.com/penny.de"
+          src={entry.payee.imgSrc}
           alt="vendor logo"
           width="70px"
         />
@@ -30,7 +29,7 @@ export default function TransactionsDetail({
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Category</p>
-                <p className="description">Food & Groceries</p>
+                <p className="description">{entry.category}</p>
               </div>
               <div className="transaction-detail-further">></div>
             </li>

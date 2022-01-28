@@ -89,10 +89,11 @@ export default function App() {
             path="/"
             element={
               <Home
-                data={handleTransactionsDisplay(transactions, count)}
+                data={transactions}
                 dateFormatter={getFormattedDate}
                 currencyFormatter={getFormattedAmount}
                 transactionsGrouper={handleTransactionsGroup}
+                transactionsDisplay={handleTransactionsDisplay}
                 onTransactionAdd={handleTransactionAdd}
                 setCount={setCount}
                 count={count}
@@ -100,7 +101,7 @@ export default function App() {
             }
           />
           <Route
-            path="/detail"
+            path="detail/:transactionId"
             element={
               <TransactionsDetail
                 data={transactions}
