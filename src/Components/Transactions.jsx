@@ -1,4 +1,5 @@
 import React from "react";
+import TransactionRow from "./TransactionRow";
 import "./Transactions.css";
 
 export default function Transactions({
@@ -26,24 +27,12 @@ export default function Transactions({
                 >
                   {transactions.entries.map((entry) => {
                     return (
-                      <li className="transaction-row" key={entry.id}>
-                        <div className="transaction-logo-container">
-                          <img
-                            className="transaction-logo"
-                            src={entry.payee.imgSrc}
-                            alt={entry.payee.shortName}
-                          />
-                        </div>
-                        <div className="transaction-description">
-                          <p className="transaction-payee">
-                            {entry.payee.shortName}
-                          </p>
-                          <p>{dateFormatter(entry.date)}</p>
-                        </div>
-                        <div className="transaction-amount">
-                          <p>{currencyFormatter(entry.amount)}</p>
-                        </div>
-                      </li>
+                      <TransactionRow
+                        item={entry}
+                        dateFormatter={dateFormatter}
+                        currencyFormatter={currencyFormatter}
+                        key={entry.id}
+                      />
                     );
                   })}
                 </ul>
