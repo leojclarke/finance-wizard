@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useScrollHandler } from "../Hooks/customHooks";
 import "./Header.css";
 
@@ -6,37 +6,52 @@ export default function Header({ data, currencyFormatter }) {
   console.log({ data });
   const scroll = useScrollHandler();
 
-  const reducer = (a, b) => Number(a) + Number(b.amount);
+  const reducer = (a, b) => a + b.amount;
   const balanceCalc = data.reduce(reducer, 0);
 
   return (
     <header className={scroll ? "App-header" : "App-header box-shadow"}>
       <div className="nav-container">
         <div className="nav-left">
-          <Link to="/">
+          <Link to="/" className="logo-link">
             <img
               src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/google/313/man-mage_1f9d9-200d-2642-fe0f.png"
               alt="fw-logo"
               width="50px"
+              className="page-logo"
             />
           </Link>
         </div>
         <div className="nav-middle">
           <p className={scroll ? "balance-summary hidden" : "balance-summary"}>
             <span className="balance">{currencyFormatter(balanceCalc)}</span>
-            <span className="balance-label">current balance</span>
+            <span className="balance-label">remaining balance</span>
           </p>
         </div>
         <nav className="nav-right">
           <ul className="nav-items-container">
-            <li className="nav-item">
-              <Link to="/">Overview</Link>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Overview
+              </NavLink>
             </li>
-            <li className="nav-item">
-              <Link to="/accounts">Accounts</Link>
+            <li>
+              <NavLink
+                to="/accounts"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Accounts
+              </NavLink>
             </li>
-            <li className="nav-item">Analysis</li>
-            <li className="nav-item">My Account</li>
+            <li>
+              <Link to="/">Analysis</Link>
+            </li>
+            <li>
+              <Link to="/">My Account</Link>
+            </li>
           </ul>
         </nav>
       </div>
