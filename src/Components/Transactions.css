@@ -24,15 +24,15 @@
   border-radius: 10px;
 }
 
-.transactions-list li:first-of-type {
+.transactions-list a:first-of-type > li {
   border-radius: 10px 10px 0 0;
 }
 
-.transactions-list li:last-of-type {
+.transactions-list a:last-of-type > li {
   border-radius: 0 0 10px 10px;
 }
 
-.transactions-short-list li {
+.transactions-short-list a > li {
   border-radius: 10px 10px;
 }
 
@@ -41,47 +41,4 @@
   list-style: none;
   max-width: 858px;
   margin: auto 0;
-}
-
-.transaction-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #ffffff;
-  border-bottom: 1px #ddd solid;
-}
-
-.transaction-logo {
-  border-radius: 10px;
-  width: 50px;
-  padding: 5px;
-}
-
-.transaction-logo-container {
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  margin: auto;
-}
-
-.transaction-description {
-  padding: 0 10px;
-  text-align: left;
-  align-items: center;
-  justify-content: left;
-  min-width: 650px;
-}
-
-.transaction-description p {
-  margin: 0;
-}
-
-.transaction-payee {
-  font-weight: 700;
-}
-
-.transaction-amount {
-  text-align: right;
-  min-width: 100px;
-  padding-right: 10px;
 }

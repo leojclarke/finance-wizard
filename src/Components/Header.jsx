@@ -9,11 +9,13 @@ export default function Header() {
     <header className={scroll ? "App-header" : "App-header box-shadow"}>
       <div className="nav-container">
         <div className="nav-left">
-          <img
-            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/google/313/man-mage_1f9d9-200d-2642-fe0f.png"
-            alt="fw-logo"
-            width="70px"
-          />
+          <Link to="/">
+            <img
+              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/google/313/man-mage_1f9d9-200d-2642-fe0f.png"
+              alt="fw-logo"
+              width="50px"
+            />
+          </Link>
         </div>
         <div className="nav-middle">
           <p className="balance-summary">

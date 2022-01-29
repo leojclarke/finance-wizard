@@ -6,4 +6,9 @@ function getLocal(name) {
   return JSON.parse(localStorage.getItem(name));
 }
 
-export { setLocal, getLocal };
+function getTransaction(id, transactions) {
+  console.log({ id });
+  return transactions.find((transaction) => transaction.id === id);
+}
+
+export { setLocal, getLocal, getTransaction };
