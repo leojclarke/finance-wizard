@@ -80,10 +80,15 @@ a:visited {
   max-width: 858px;
 }
 
-.amount {
+.balance {
   font-size: 1rem;
 }
 
-.description {
-  font-size: 0.6rem;
+.hidden {
+  display: none;
+}
+
+.balance-label {
+  font-size: 0.7rem;
+  font-weight: 400;
 }

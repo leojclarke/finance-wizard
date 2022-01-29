@@ -82,7 +82,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header data={transactions} currencyFormatter={getFormattedAmount} />
       <main className="main">
         <Routes>
           <Route

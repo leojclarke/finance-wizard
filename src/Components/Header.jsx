@@ -2,8 +2,12 @@ import { Link } from "react-router-dom";
 import { useScrollHandler } from "../Hooks/customHooks";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ data, currencyFormatter }) {
+  console.log({ data });
   const scroll = useScrollHandler();
+
+  const reducer = (a, b) => Number(a) + Number(b.amount);
+  const balanceCalc = data.reduce(reducer, 0);
 
   return (
     <header className={scroll ? "App-header" : "App-header box-shadow"}>
@@ -18,9 +22,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="nav-middle">
-          <p className="balance-summary">
-            <span className="amount">€22.22</span>
-            <span className="description">current balance</span>
+          <p className={scroll ? "balance-summary hidden" : "balance-summary"}>
+            <span className="balance">{currencyFormatter(balanceCalc)}</span>
+            <span className="balance-label">current balance</span>
           </p>
         </div>
         <nav className="nav-right">
