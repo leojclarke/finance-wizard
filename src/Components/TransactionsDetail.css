@@ -77,17 +77,21 @@
 }
 
 .icon {
-  background: purple;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3c318f;
   color: #fff;
-  display: block;
   border-radius: 50%;
   width: 50px;
   height: 50px;
   padding: 20px;
-  line-height: 1rem;
   font-size: 1rem;
   font-weight: 800;
   margin: 0;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .transaction-detail-column {

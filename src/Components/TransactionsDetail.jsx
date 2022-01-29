@@ -25,7 +25,9 @@ export default function TransactionsDetail({ data, currencyFormatter }) {
           <ul className="transactions-detail-list">
             <li className="transaction-detail-row">
               <div className="transaction-icon-column">
-                <p className="icon">C</p>
+                <div className="icon">
+                  <p>C</p>
+                </div>{" "}
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Category</p>
@@ -35,7 +37,9 @@ export default function TransactionsDetail({ data, currencyFormatter }) {
             </li>
             <li className="transaction-detail-row">
               <div className="transaction-icon-column">
-                <p className="icon">T</p>
+                <div className="icon">
+                  <p>T</p>
+                </div>{" "}
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Transaction Type</p>
@@ -45,7 +49,9 @@ export default function TransactionsDetail({ data, currencyFormatter }) {
             </li>
             <li className="transaction-detail-row">
               <div className="transaction-icon-column">
-                <p className="icon">V</p>
+                <div className="icon">
+                  <p>V</p>
+                </div>
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Vendor</p>
