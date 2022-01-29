@@ -1,11 +1,12 @@
 import { getLocal, setLocal } from "./Helpers/services";
 import { useState, useEffect } from "react";
 import sampleTransactions from "./Assets/JSON/data.json";
-import Header from "./Components/Header.jsx";
-import TransactionsDetail from "./Components/TransactionsDetail";
-import Home from "./Pages";
 import { Route, Routes } from "react-router-dom";
-import Accounts from "./Pages/accounts";
+import Header from "./Components/Header.jsx";
+import Home from "./Pages";
+import AccountsPage from "./Pages/accounts";
+import SearchPage from "./Pages/search";
+import TransactionsDetail from "./Components/TransactionsDetail";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -110,7 +111,8 @@ export default function App() {
               />
             }
           />
-          <Route path="/accounts" element={<Accounts />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/accounts" element={<AccountsPage />} />
         </Routes>
       </main>
     </div>

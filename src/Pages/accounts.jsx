@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Accounts() {
+export default function AccountsPage() {
   return (
     <section className="transactions-section">
       <div className="transaction-section-header">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "../Components/Button";
 import Search from "../Components/Search";
 import Transactions from "../Components/Transactions";
@@ -26,9 +27,11 @@ export default function Home({
           <Button onClick={() => setCount(count + 1)} text={"Load more"} />
         </div>
       </div>
-      <div className="btn-container">
-        <Search />
-      </div>
+      <Link to="/search" className="search-link">
+        <div className="search-container">
+          <Search />
+        </div>
+      </Link>
       <Transactions
         data={transactionsDisplay(data, count)}
         dateFormatter={dateFormatter}
