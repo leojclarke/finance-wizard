@@ -1,5 +1,7 @@
-a {
+.row-link {
   text-decoration: none;
+  padding: 0;
+  margin: 0;
 }
 
 .transaction-row {

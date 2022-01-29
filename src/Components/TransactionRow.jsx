@@ -8,7 +8,7 @@ export default function TransactionRow({
   currencyFormatter,
 }) {
   return (
-    <Link to={"detail/" + item.id} key={item.id}>
+    <Link to={"detail/" + item.id} key={item.id} className="row-link">
       <li className="transaction-row">
         <div className="transaction-logo-container">
           <img
