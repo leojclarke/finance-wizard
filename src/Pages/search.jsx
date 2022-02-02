@@ -20,6 +20,8 @@ export default function SearchPage({ data }) {
       </div>
       <div className="search-container">
         <Search />
+      </div>
+      <div>
         <Merchants merchants={merchants} />
       </div>
     </section>

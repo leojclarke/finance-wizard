@@ -11,16 +11,20 @@ export default function Merchants({ merchants }) {
 
   console.log({ filteredMerchants });
   return (
-    <ul className="merch-container">
-      {filteredMerchants
-        .map((merchant) => {
-          return (
-            <li key={merchant.id}>
-              <img src={merchant.url} alt={merchant.name} />
-            </li>
-          );
-        })
-        .slice(0, 4)}
-    </ul>
+    <div>
+      <h2>Merchants</h2>
+      <ul className="merch-container">
+        {filteredMerchants
+          .map((merchant) => {
+            return (
+              <li key={merchant.id}>
+                <img src={merchant.url} alt={merchant.name} />
+                <p>{merchant.name}</p>
+              </li>
+            );
+          })
+          .slice(0, 4)}
+      </ul>
+    </div>
   );
 }
