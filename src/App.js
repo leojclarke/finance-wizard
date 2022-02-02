@@ -111,7 +111,7 @@ export default function App() {
               />
             }
           />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/search" element={<SearchPage data={transactions} />} />
           <Route path="/accounts" element={<AccountsPage />} />
         </Routes>
       </main>

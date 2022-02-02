@@ -1,0 +1,23 @@
+.merch-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.merch-container li {
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li > img {
+  display: flex;
+  width: 70px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}

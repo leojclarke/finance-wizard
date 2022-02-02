@@ -27,6 +27,13 @@ main {
   justify-content: space-between;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .page-title {
   font-size: 3em;
   font-weight: 800;
