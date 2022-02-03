@@ -1,7 +1,7 @@
 import { getLocal, setLocal } from "./Helpers/services";
 import { useState, useEffect } from "react";
 import sampleTransactions from "./Assets/JSON/data.json";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header.jsx";
 import Home from "./Pages";
 import AccountsPage from "./Pages/accounts";
@@ -87,7 +87,8 @@ export default function App() {
       <main className="main">
         <Routes>
           <Route
-            path="/"
+            index
+            path="/transactions"
             element={
               <Home
                 data={transactions}
@@ -111,8 +112,12 @@ export default function App() {
               />
             }
           />
-          <Route path="/search" element={<SearchPage data={transactions} />} />
+          <Route
+            path="/transactions/search"
+            element={<SearchPage data={transactions} />}
+          />
           <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="*" element={<Navigate to="/transactions" replace />} />
         </Routes>
       </main>
     </div>

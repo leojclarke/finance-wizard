@@ -32,7 +32,7 @@ export default function Header({ data, currencyFormatter }) {
           <ul className="nav-items-container">
             <li>
               <NavLink
-                to="/"
+                to="/transactions"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 Overview

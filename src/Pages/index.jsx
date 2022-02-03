@@ -27,7 +27,7 @@ export default function Home({
           <Button onClick={() => setCount(count + 1)} text={"Load more"} />
         </div>
       </div>
-      <Link to="/search" className="search-link">
+      <Link to="/transactions/search" className="search-link">
         <div className="search-container">
           <Search />
         </div>
