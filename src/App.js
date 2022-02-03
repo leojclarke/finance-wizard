@@ -103,7 +103,7 @@ export default function App() {
             }
           />
           <Route
-            path="detail/:transactionId"
+            path="transactions/detail/:transactionId"
             element={
               <TransactionsDetail
                 data={transactions}
