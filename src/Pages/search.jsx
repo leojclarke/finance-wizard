@@ -2,7 +2,15 @@ import React from "react";
 import Merchants from "../Components/Merchants";
 import Search from "../Components/Search";
 
-export default function SearchPage({ data }) {
+export default function SearchPage({
+  data,
+  dateFormatter,
+  currencyFormatter,
+  filteredResults,
+  searchInput,
+  onFilterResults,
+  onInputEntry,
+}) {
   const merchants = [];
 
   data.map((merchant) => {
@@ -19,10 +27,22 @@ export default function SearchPage({ data }) {
         <h1 className="page-title">Search</h1>
       </div>
       <div className="search-container">
-        <Search />
+        <Search
+          data={data}
+          dateFormatter={dateFormatter}
+          currencyFormatter={currencyFormatter}
+          searchInput={searchInput}
+          handleTransactionsFilter={onFilterResults}
+          handleInputEntry={onInputEntry}
+        />
       </div>
       <div>
-        <Merchants merchants={merchants} />
+        <Merchants
+          handleInputEntry={onInputEntry}
+          handleTransactionsFilter={onFilterResults}
+          merchants={merchants}
+          data={data}
+        />
       </div>
     </section>
   );

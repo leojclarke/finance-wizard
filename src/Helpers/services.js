@@ -7,7 +7,6 @@ function getLocal(name) {
 }
 
 function getTransaction(id, transactions) {
-  console.log({ id });
   return transactions.find((transaction) => transaction.id === id);
 }
 

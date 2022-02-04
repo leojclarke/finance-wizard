@@ -16,6 +16,9 @@ export default function App() {
   );
   const [count, setCount] = useState(5);
 
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
+
   useEffect(() => setLocal("transactions", transactions), [transactions]);
   useEffect(() => setLocal("count", count), [count]);
 
@@ -81,6 +84,16 @@ export default function App() {
     return data.slice(0, count);
   };
 
+  const handleTransactionsFilter = (queryResults) => {
+    console.log({ queryResults });
+    setFilteredResults(queryResults);
+  };
+
+  const handleInputEntry = (value) => {
+    console.log("Search Input: ", value);
+    setSearchInput(value);
+  };
+
   return (
     <div className="App">
       <Header data={transactions} currencyFormatter={getFormattedAmount} />
@@ -114,7 +127,15 @@ export default function App() {
           />
           <Route
             path="/transactions/search"
-            element={<SearchPage data={transactions} />}
+            element={
+              <SearchPage
+                data={transactions}
+                searchInput={searchInput}
+                filteredResults={filteredResults}
+                onFilterResults={handleTransactionsFilter}
+                onInputEntry={handleInputEntry}
+              />
+            }
           />
           <Route path="/accounts" element={<AccountsPage />} />
           <Route path="*" element={<Navigate to="/transactions" replace />} />

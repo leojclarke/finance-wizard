@@ -7,6 +7,7 @@ export default function TransactionRow({
   dateFormatter,
   currencyFormatter,
 }) {
+  console.log({ item });
   return (
     <Link to={"detail/" + item.id} key={item.id} className="row-link">
       <li className="transaction-row">
