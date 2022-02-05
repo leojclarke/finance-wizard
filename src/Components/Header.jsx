@@ -3,7 +3,6 @@ import { useScrollHandler } from "../Hooks/customHooks";
 import "./Header.css";
 
 export default function Header({ data, currencyFormatter }) {
-  console.log({ data });
   const scroll = useScrollHandler();
 
   const reducer = (a, b) => a + b.amount;
@@ -32,7 +31,7 @@ export default function Header({ data, currencyFormatter }) {
           <ul className="nav-items-container">
             <li>
               <NavLink
-                to="/"
+                to="/transactions"
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
               >
                 Overview

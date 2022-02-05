@@ -1,11 +1,12 @@
 import { getLocal, setLocal } from "./Helpers/services";
 import { useState, useEffect } from "react";
 import sampleTransactions from "./Assets/JSON/data.json";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header.jsx";
-import TransactionsDetail from "./Components/TransactionsDetail";
 import Home from "./Pages";
-import { Route, Routes } from "react-router-dom";
-import Accounts from "./Pages/accounts";
+import AccountsPage from "./Pages/accounts";
+import SearchPage from "./Pages/search";
+import TransactionsDetail from "./Components/TransactionsDetail";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -14,6 +15,9 @@ export default function App() {
     getLocal("transactions") || sampleTransactions
   );
   const [count, setCount] = useState(5);
+
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredResults, setFilteredResults] = useState([]);
 
   useEffect(() => setLocal("transactions", transactions), [transactions]);
   useEffect(() => setLocal("count", count), [count]);
@@ -80,13 +84,24 @@ export default function App() {
     return data.slice(0, count);
   };
 
+  const handleTransactionsFilter = (queryResults) => {
+    console.log({ queryResults });
+    setFilteredResults(queryResults);
+  };
+
+  const handleInputEntry = (value) => {
+    console.log("Search Input: ", value);
+    setSearchInput(value);
+  };
+
   return (
     <div className="App">
       <Header data={transactions} currencyFormatter={getFormattedAmount} />
       <main className="main">
         <Routes>
           <Route
-            path="/"
+            index
+            path="/transactions"
             element={
               <Home
                 data={transactions}
@@ -101,7 +116,7 @@ export default function App() {
             }
           />
           <Route
-            path="detail/:transactionId"
+            path="transactions/detail/:transactionId"
             element={
               <TransactionsDetail
                 data={transactions}
@@ -110,7 +125,20 @@ export default function App() {
               />
             }
           />
-          <Route path="/accounts" element={<Accounts />} />
+          <Route
+            path="/transactions/search"
+            element={
+              <SearchPage
+                data={transactions}
+                searchInput={searchInput}
+                filteredResults={filteredResults}
+                onFilterResults={handleTransactionsFilter}
+                onInputEntry={handleInputEntry}
+              />
+            }
+          />
+          <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="*" element={<Navigate to="/transactions" replace />} />
         </Routes>
       </main>
     </div>

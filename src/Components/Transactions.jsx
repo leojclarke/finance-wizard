@@ -9,7 +9,7 @@ export default function Transactions({
   transactionsGrouper,
 }) {
   return (
-    <section className="transactions-section">
+    <section>
       <div className="transaction-section-header">
         {transactionsGrouper(data).map((transactions) => {
           return (
