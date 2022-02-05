@@ -1,28 +1,11 @@
-a,
-active {
-  padding: 10px 20px;
-  margin-left: 10px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-a:hover,
-a:active {
-  color: #18c5ab;
-  background-color: rgba(24, 197, 171, 0.1);
-}
-
-a,
-a:link,
-a:visited,
-.inactive {
-  color: #3c318f;
-}
-
 .active {
-  background-color: rgba(24, 197, 171, 0.1);
-  color: #18c5ab;
+  color: var(--secondary-color);
+  font-weight: 900;
+}
+
+.inactive {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .App-header {
@@ -33,7 +16,6 @@ a:visited,
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #3c318f;
   position: fixed;
 }
 

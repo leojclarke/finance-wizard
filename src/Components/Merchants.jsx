@@ -17,13 +17,11 @@ export default function Merchants({
   const handleMerchantFilter = (merchant) => {
     handleInputEntry(merchant.name);
     const searchResults = data.filter((entry) => {
-      return Object.values(entry.payee)
+      return Object.values(entry.merchant)
         .join("")
         .toLowerCase()
         .includes(merchant.name.toLowerCase());
     });
-
-    console.log("merchant search: ", searchResults);
 
     return handleTransactionsFilter(searchResults);
   };

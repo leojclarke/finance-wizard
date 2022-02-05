@@ -24,7 +24,7 @@ export default function Header({ data, currencyFormatter }) {
         <div className="nav-middle">
           <p className={scroll ? "balance-summary hidden" : "balance-summary"}>
             <span className="balance">{currencyFormatter(balanceCalc)}</span>
-            <span className="balance-label">remaining balance</span>
+            <span className="balance-label">left to budget</span>
           </p>
         </div>
         <nav className="nav-right">
@@ -46,10 +46,20 @@ export default function Header({ data, currencyFormatter }) {
               </NavLink>
             </li>
             <li>
-              <Link to="/">Analysis</Link>
+              <NavLink
+                to="/analysis"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Analysis
+              </NavLink>
             </li>
             <li>
-              <Link to="/">My Account</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                My Account
+              </NavLink>
             </li>
           </ul>
         </nav>

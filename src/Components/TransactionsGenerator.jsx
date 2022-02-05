@@ -1,5 +1,5 @@
 import React from "react";
-import payees from "../Assets/JSON/payees.json";
+import merchants from "../Assets/JSON/merchants.json";
 import Button from "./Button";
 
 export default function TransactionGenerator({ data, onTransactionAdd }) {
@@ -21,7 +21,7 @@ export default function TransactionGenerator({ data, onTransactionAdd }) {
         date: randomDate(new Date(2019, 0, 1), new Date()).toJSON(),
         category: "Groceries",
         account: "Postbank",
-        payee: payees[Math.floor(Math.random() * payees.length)],
+        merchant: merchants[Math.floor(Math.random() * merchants.length)],
         reference: "Generated Entry",
         type: "Expense",
       },

@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 
+:root {
+  --primary-color: #3c318f;
+  --secondary-color: #18c5ab;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,9 +15,21 @@ body {
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #3c318f;
   background-color: #fafafa;
   text-align: center;
+  color: var(--primary-color);
+}
+
+a {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
 
 main {

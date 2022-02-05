@@ -7,7 +7,7 @@
     "date": "2021-12-09T08:28:56.782Z",
     "category": "Food shopping",
     "account": "Postbank",
-    "payee": {
+    "merchant": {
       "shortName": "ALDI",
       "longName": "ALDI 293 HH-Langenhorner Chaussee",
       "imgSrc": "https://logo.clearbit.com/aldi-nord.de"
@@ -23,7 +23,7 @@
     "date": "2021-12-01T23:28:56.782Z",
     "category": "Food shopping",
     "account": "Postbank",
-    "payee": {
+    "merchant": {
       "shortName": "Penny",
       "longName": "Penny 53 HH-Troplowitz",
       "imgSrc": "https://logo.clearbit.com/penny.de"
@@ -39,7 +39,7 @@
     "date": "2021-01-01T23:28:56.782Z",
     "category": "Salary",
     "account": "Postbank",
-    "payee": {
+    "merchant": {
       "shortName": "Apple",
       "longName": "Apple Computer Industries",
       "imgSrc": "https://logo.clearbit.com/apple.com"

@@ -12,11 +12,11 @@ export default function TransactionsDetail({ data, currencyFormatter }) {
       <section className="transaction-detail-section">
         <img
           className="vendor-logo"
-          src={entry.payee.imgSrc}
+          src={entry.merchant.imgSrc}
           alt="vendor logo"
           width="70px"
         />
-        <p className="vendor">{entry.payee.shortName}</p>
+        <p className="vendor">{entry.merchant.shortName}</p>
         <p className="amount-detail">{currencyFormatter(entry.amount)}</p>
         <p className="date">{entry.date}</p>
 
@@ -55,7 +55,7 @@ export default function TransactionsDetail({ data, currencyFormatter }) {
               </div>
               <div className="transaction-detail-column">
                 <p className="label">Vendor</p>
-                <p className="description">{entry.payee.longName}</p>
+                <p className="description">{entry.merchant.longName}</p>
               </div>
               <div className="transaction-detail-further"></div>
             </li>
