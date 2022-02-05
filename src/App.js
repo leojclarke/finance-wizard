@@ -7,6 +7,7 @@ import Home from "./Pages";
 import AccountsPage from "./Pages/accounts";
 import SearchPage from "./Pages/search";
 import TransactionsDetail from "./Components/TransactionsDetail";
+import AnalysisPage from "./Pages/analysis";
 
 export default function App() {
   sampleTransactions.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -136,6 +137,7 @@ export default function App() {
             }
           />
           <Route path="/accounts" element={<AccountsPage />} />
+          <Route path="/analysis" element={<AnalysisPage />} />
           <Route path="*" element={<Navigate to="/transactions" replace />} />
         </Routes>
       </main>

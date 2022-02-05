@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #3c318f;
+  background-color: var(--primary-color);
   color: #fff;
   border-radius: 50%;
   width: 50px;
@@ -113,7 +113,7 @@
 .description {
   font-size: 0.9rem;
   font-weight: 600;
-  color: darkslategray;
+  color: #4a5568;
   margin: 0;
 }
 

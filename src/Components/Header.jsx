@@ -46,10 +46,20 @@ export default function Header({ data, currencyFormatter }) {
               </NavLink>
             </li>
             <li>
-              <Link to="/">Analysis</Link>
+              <NavLink
+                to="/analysis"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                Analysis
+              </NavLink>
             </li>
             <li>
-              <Link to="/">My Account</Link>
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "inactive")}
+              >
+                My Account
+              </NavLink>
             </li>
           </ul>
         </nav>
