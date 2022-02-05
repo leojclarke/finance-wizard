@@ -7,19 +7,18 @@ export default function TransactionRow({
   dateFormatter,
   currencyFormatter,
 }) {
-  console.log({ item });
   return (
     <Link to={"detail/" + item.id} key={item.id} className="row-link">
       <li className="transaction-row">
         <div className="transaction-logo-container">
           <img
             className="transaction-logo"
-            src={item.payee.imgSrc}
-            alt={item.payee.shortName}
+            src={item.merchant.imgSrc}
+            alt={item.merchant.shortName}
           />
         </div>
         <div className="transaction-description">
-          <p className="transaction-payee">{item.payee.shortName}</p>
+          <p className="transaction-merchant">{item.merchant.shortName}</p>
 
           <p>{dateFormatter(item.date)}</p>
         </div>

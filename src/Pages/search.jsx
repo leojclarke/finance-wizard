@@ -16,8 +16,8 @@ export default function SearchPage({
   data.map((merchant) => {
     return merchants.push({
       id: Math.random() * 1,
-      name: merchant.payee.shortName,
-      url: merchant.payee.imgSrc,
+      name: merchant.merchant.shortName,
+      url: merchant.merchant.imgSrc,
     });
   });
 

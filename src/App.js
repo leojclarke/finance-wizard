@@ -85,12 +85,10 @@ export default function App() {
   };
 
   const handleTransactionsFilter = (queryResults) => {
-    console.log({ queryResults });
     setFilteredResults(queryResults);
   };
 
   const handleInputEntry = (value) => {
-    console.log("Search Input: ", value);
     setSearchInput(value);
   };
 

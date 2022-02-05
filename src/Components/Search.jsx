@@ -8,17 +8,14 @@ export default function Search({
 }) {
   const searchTransactions = (event, searchInput) => {
     event.preventDefault();
-    console.log({ searchInput });
     handleInputEntry(searchInput);
 
     const searchResults = data.filter((entry) => {
-      return Object.values(entry.payee)
+      return Object.values(entry.merchant)
         .join("")
         .toLowerCase()
         .includes(searchInput.toLowerCase());
     });
-
-    console.log({ searchResults });
 
     return handleTransactionsFilter(searchResults);
   };
