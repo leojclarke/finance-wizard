@@ -1,13 +1,45 @@
-input {
-  width: 100%;
-  line-height: 1.1rem;
-  padding: 10px 10px;
-  margin: 10px 0;
-}
-
 form {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  background: tomato;
+}
+
+label {
+  display: none;
+}
+
+input {
+  line-height: 1.5rem;
+  padding-left: 1px;
+  padding-inline-start: 30px;
+  padding-inline-end: 40px;
+  padding-right: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin: 0;
+  border-radius: 8px;
+  border: none;
+  position: relative;
+  width: 500px;
+  z-index: 4;
+}
+
+.start-icon {
+  position: absolute;
+  height: 100%;
+  left: 12px;
+  top: 1;
+}
+.end-icon {
+  position: absolute;
+  right: 600px;
+  width: 24px;
+}
+
+.icon-container {
+  position: relative;
+  height: 45px;
+  display: inline-block;
 }
