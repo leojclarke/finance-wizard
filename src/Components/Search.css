@@ -3,7 +3,6 @@ form {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: tomato;
 }
 
 label {
@@ -11,31 +10,68 @@ label {
 }
 
 input {
-  line-height: 1.5rem;
-  padding-left: 1px;
-  padding-inline-start: 30px;
-  padding-inline-end: 40px;
-  padding-right: 10px;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  margin: 0;
-  border-radius: 8px;
+  color: darkblue;
   border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  height: 100%;
+  outline: none;
+  padding-inline-end: 44px;
+  padding-inline-start: 52px;
   position: relative;
-  width: 500px;
-  z-index: 4;
+  width: 100%;
 }
 
-.start-icon {
-  position: absolute;
-  height: 100%;
-  left: 12px;
-  top: 1;
+input:focus {
+  background: #fff;
+  border: 2px solid var(--primary-color);
 }
-.end-icon {
-  position: absolute;
-  right: 600px;
+
+input:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+svg {
   width: 24px;
+  margin-top: 0;
+}
+
+.search-icon,
+.cancel-icon {
+  color: var(--primary-color);
+}
+
+.search-icon:hover,
+.cancel-icon:hover {
+  color: var(--primary-color);
+}
+.input-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  --container-height: 50px;
+  height: var(--container-height);
+  margin: auto;
+}
+
+.search-icon {
+  height: 100%;
+  left: 14px;
+  position: absolute;
+  top: 0;
+}
+.cancel-icon {
+  font-size: 0.9rem;
+  height: 100%;
+  right: 14px;
+  position: absolute;
+  top: 2px;
 }
 
 .icon-container {

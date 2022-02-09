@@ -24,19 +24,21 @@ export default function Search({
 
   return (
     <form onSubmit={(event) => searchTransactions(event, searchInput)}>
-      <div className="icon-container">
-        <SearchIcon className="start-icon" />
+      <div className="search-container">
+        <div className="input-wrapper">
+          <label for="search">Search Transactions</label>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search transactions..."
+            value={searchInput}
+            autoFocus
+            onChange={(event) => handleInputEntry(event.target.value)}
+          />
 
-        <label for="search">Search Transactions</label>
-        <input
-          id="search"
-          type="text"
-          placeholder="Search transactions..."
-          value={searchInput}
-          onChange={(event) => handleInputEntry(event.target.value)}
-        />
-
-        <XIcon className="end-icon" />
+          <SearchIcon className="search-icon" />
+          <XIcon className="cancel-icon" />
+        </div>
       </div>
 
       <button type="submit">Search</button>
