@@ -23,7 +23,6 @@ export default function SearchPage({
     });
   });
 
-  console.log("search.js :", isFocussed);
   return (
     <section className="transactions-section">
       <div className="transaction-section-header">

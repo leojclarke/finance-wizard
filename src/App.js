@@ -96,7 +96,6 @@ export default function App() {
 
   const handleSetInputFocus = (state) => {
     setIsFocussed(state);
-    console.log("App.js: ", isFocussed);
   };
 
   return (

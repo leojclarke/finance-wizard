@@ -17,7 +17,6 @@ export default function Home({
   onInputFocus,
   isFocussed,
 }) {
-  console.log("index.js :", isFocussed);
   return (
     <>
       <div className="page-header">
