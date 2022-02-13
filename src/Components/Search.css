@@ -10,7 +10,7 @@ label {
 }
 
 input {
-  color: darkblue;
+  color: hsl(var(--primary-color));
   border: none;
   border-radius: 10px;
   font-family: inherit;
@@ -21,6 +21,8 @@ input {
   padding-inline-start: 52px;
   position: relative;
   width: 100%;
+  box-shadow: none;
+  transition: box-shadow 0.5s;
 }
 
 input:focus {
