@@ -79,3 +79,11 @@ svg {
   height: 45px;
   display: inline-block;
 }
+
+.cancel-hidden {
+  opacity: 0%;
+}
+
+.not-hidden {
+  opacity: 90%;
+}

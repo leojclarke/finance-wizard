@@ -44,7 +44,14 @@ export default function Search({
           />
 
           <SearchIcon className="search-icon" />
-          <XIcon className="cancel-icon" />
+
+          <XIcon
+            className={`cancel-icon ${
+              searchInput === undefined || searchInput.length <= 0
+                ? "cancel-hidden"
+                : "not-hidden"
+            }`}
+          />
         </div>
       </div>
 
