@@ -25,7 +25,7 @@ input {
 
 input:focus {
   background: #fff;
-  border: 2px solid var(--primary-color);
+  border: 2px solid hsl(var(--primary-color));
 }
 
 input:hover {
@@ -37,14 +37,13 @@ svg {
   margin-top: 0;
 }
 
-.search-icon,
-.cancel-icon {
-  color: var(--primary-color);
+.search-icon {
+  color: hsl(var(--primary-color));
 }
 
 .search-icon:hover,
 .cancel-icon:hover {
-  color: var(--primary-color);
+  color: hsl(var(--primary-color));
 }
 .input-wrapper {
   height: 100%;
@@ -66,12 +65,15 @@ svg {
   position: absolute;
   top: 0;
 }
+
 .cancel-icon {
   font-size: 0.9rem;
   height: 100%;
   right: 14px;
   position: absolute;
   top: 2px;
+  width: 18px;
+  color: hsl(var(--primary-color));
 }
 
 .icon-container {
@@ -85,5 +87,5 @@ svg {
 }
 
 .not-hidden {
-  opacity: 90%;
+  opacity: 50%;
 }

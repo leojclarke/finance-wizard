@@ -1,7 +1,7 @@
 .transaction-month-header {
   font-size: 0.6rem;
   font-weight: 500;
-  color: var(--primary-color);
+  color: hsl(var(--primary-color));
   text-align: left;
 }
 
