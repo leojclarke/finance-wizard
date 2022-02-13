@@ -7,6 +7,8 @@ export default function Search({
   searchInput,
   handleTransactionsFilter,
   handleInputEntry,
+  isFocussed,
+  onInputFocus,
 }) {
   const searchTransactions = (event, searchInput) => {
     event.preventDefault();
@@ -26,14 +28,19 @@ export default function Search({
     <form onSubmit={(event) => searchTransactions(event, searchInput)}>
       <div className="search-container">
         <div className="input-wrapper">
-          <label for="search">Search Transactions</label>
+          <label htmlFor="search">Search Transactions</label>
           <input
             id="search"
             type="text"
             placeholder="Search transactions..."
             value={searchInput}
-            autoFocus
-            onChange={(event) => handleInputEntry(event.target.value)}
+            autoFocus={isFocussed}
+            onFocus={(e) => {
+              e.currentTarget.select();
+            }}
+            onChange={(event) => {
+              handleInputEntry(event.target.value);
+            }}
           />
 
           <SearchIcon className="search-icon" />

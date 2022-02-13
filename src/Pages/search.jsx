@@ -10,6 +10,8 @@ export default function SearchPage({
   searchInput,
   onFilterResults,
   onInputEntry,
+  onInputFocus,
+  isFocussed,
 }) {
   const merchants = [];
 
@@ -21,6 +23,7 @@ export default function SearchPage({
     });
   });
 
+  console.log("search.js :", isFocussed);
   return (
     <section className="transactions-section">
       <div className="transaction-section-header">
@@ -32,6 +35,8 @@ export default function SearchPage({
           dateFormatter={dateFormatter}
           currencyFormatter={currencyFormatter}
           searchInput={searchInput}
+          isFocussed={isFocussed}
+          onInputFocus={onInputFocus}
           handleTransactionsFilter={onFilterResults}
           handleInputEntry={onInputEntry}
         />

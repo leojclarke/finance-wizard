@@ -19,6 +19,7 @@ export default function App() {
 
   const [searchInput, setSearchInput] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
+  const [isFocussed, setIsFocussed] = useState(false);
 
   useEffect(() => setLocal("transactions", transactions), [transactions]);
   useEffect(() => setLocal("count", count), [count]);
@@ -93,6 +94,11 @@ export default function App() {
     setSearchInput(value);
   };
 
+  const handleSetInputFocus = (state) => {
+    setIsFocussed(state);
+    console.log("App.js: ", isFocussed);
+  };
+
   return (
     <div className="App">
       <Header data={transactions} currencyFormatter={getFormattedAmount} />
@@ -111,6 +117,8 @@ export default function App() {
                 onTransactionAdd={handleTransactionAdd}
                 setCount={setCount}
                 count={count}
+                onInputFocus={handleSetInputFocus}
+                isFocussed={isFocussed}
               />
             }
           />
@@ -130,6 +138,8 @@ export default function App() {
               <SearchPage
                 data={transactions}
                 searchInput={searchInput}
+                isFocussed={isFocussed}
+                onInputFocus={handleSetInputFocus}
                 filteredResults={filteredResults}
                 onFilterResults={handleTransactionsFilter}
                 onInputEntry={handleInputEntry}
