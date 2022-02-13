@@ -51,11 +51,11 @@ main {
 }
 
 .page-title {
-  font-size: 3em;
-  font-weight: 800;
-  padding-top: 100px;
-  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 20px 0;
   text-align: left;
+  text-transform: capitalize;
 }
 
 .page-header {
@@ -75,4 +75,16 @@ main {
   background: transparent;
   padding: 0;
   margin: 0;
+}
+
+/* utility beginnings */
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.flex-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

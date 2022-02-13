@@ -20,7 +20,7 @@ export default function Home({
   return (
     <>
       <div className="page-header">
-        <h1>HOME</h1>
+        <h1 className="page-title">Home</h1>
         <div className="btn-container">
           <TransactionGenerator
             data={data}
