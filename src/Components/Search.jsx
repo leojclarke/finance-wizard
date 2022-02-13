@@ -24,6 +24,9 @@ export default function Search({
     return handleTransactionsFilter(searchResults);
   };
 
+  const clearSearch = () => {
+    handleInputEntry("");
+  };
   return (
     <form onSubmit={(event) => searchTransactions(event, searchInput)}>
       <div className="search-container">
@@ -51,6 +54,7 @@ export default function Search({
                 ? "cancel-hidden"
                 : "not-hidden"
             }`}
+            onClick={() => clearSearch()}
           />
         </div>
       </div>
