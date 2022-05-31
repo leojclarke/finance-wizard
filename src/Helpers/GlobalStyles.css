@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins");
 
 :root {
-  --primary-color: #3c318f;
-  --secondary-color: #18c5ab;
+  --primary-color: 247, 49%, 38%;
+  --secondary-color: 171, 78%, 43%;
 }
 
 * {
@@ -17,7 +17,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
   text-align: center;
-  color: var(--primary-color);
+  color: hsl(var(--primary-color));
 }
 
 a {
@@ -25,11 +25,11 @@ a {
   margin-left: 10px;
   border-radius: 10px;
   text-decoration: none;
-  color: var(--primary-color);
+  color: hsl(var(--primary-color));
 }
 
 a:hover {
-  color: var(--secondary-color);
+  color: hsl(var(--secondary-color));
 }
 
 main {
@@ -51,11 +51,11 @@ main {
 }
 
 .page-title {
-  font-size: 3em;
-  font-weight: 800;
-  padding-top: 100px;
-  margin: 0;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 20px 0;
   text-align: left;
+  text-transform: capitalize;
 }
 
 .page-header {
@@ -75,4 +75,16 @@ main {
   background: transparent;
   padding: 0;
   margin: 0;
+}
+
+/* utility beginnings */
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.flex-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

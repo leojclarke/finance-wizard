@@ -1,6 +1,9 @@
 import React from "react";
 import Merchants from "../Components/Merchants";
 import Search from "../Components/Search";
+import { XIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
+import TransactionRow from "../Components/TransactionRow";
 
 export default function SearchPage({
   data,
@@ -10,7 +13,11 @@ export default function SearchPage({
   searchInput,
   onFilterResults,
   onInputEntry,
+  onInputFocus,
+  isFocussed,
 }) {
+  console.log(dateFormatter("2022-01-30T05:05:01.562Z"));
+
   const merchants = [];
 
   data.map((merchant) => {
@@ -22,9 +29,12 @@ export default function SearchPage({
   });
 
   return (
-    <section className="transactions-section">
-      <div className="transaction-section-header">
+    <section className="transaction-section pt-24">
+      <div className="transaction-section-header flex-sb">
         <h1 className="page-title">Search</h1>
+        <Link to="/transactions">
+          <XIcon />
+        </Link>
       </div>
       <div className="search-container">
         <Search
@@ -32,6 +42,8 @@ export default function SearchPage({
           dateFormatter={dateFormatter}
           currencyFormatter={currencyFormatter}
           searchInput={searchInput}
+          isFocussed={isFocussed}
+          onInputFocus={onInputFocus}
           handleTransactionsFilter={onFilterResults}
           handleInputEntry={onInputEntry}
         />
@@ -43,6 +55,19 @@ export default function SearchPage({
           merchants={merchants}
           data={data}
         />
+      </div>
+
+      <div>
+        {filteredResults.map((entry) => {
+          return (
+            <TransactionRow
+              item={entry}
+              dateFormatter={dateFormatter}
+              currencyFormatter={currencyFormatter}
+              key={entry.id}
+            />
+          );
+        })}
       </div>
     </section>
   );

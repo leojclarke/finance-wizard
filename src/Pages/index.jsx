@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Components/Button";
 import Search from "../Components/Search";
@@ -14,11 +14,13 @@ export default function Home({
   onTransactionAdd,
   setCount,
   count,
+  onInputFocus,
+  isFocussed,
 }) {
   return (
     <>
       <div className="page-header">
-        <h1>HOME</h1>
+        <h1 className="page-title">Home</h1>
         <div className="btn-container">
           <TransactionGenerator
             data={data}
@@ -27,7 +29,13 @@ export default function Home({
           <Button onClick={() => setCount(count + 1)} text={"Load more"} />
         </div>
       </div>
-      <Link to="/transactions/search" className="search-link">
+      <Link
+        to="/search"
+        className="search-link"
+        onClick={useEffect(() => {
+          onInputFocus(true);
+        })}
+      >
         <div className="search-container">
           <Search />
         </div>

@@ -1,13 +1,93 @@
-input {
-  width: 100%;
-  line-height: 1.1rem;
-  padding: 10px 10px;
-  margin: 10px 0;
-}
-
 form {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+label {
+  display: none;
+}
+
+input {
+  color: hsl(var(--primary-color));
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  height: 100%;
+  outline: none;
+  padding-inline-end: 44px;
+  padding-inline-start: 52px;
+  position: relative;
+  width: 100%;
+  box-shadow: none;
+  transition: box-shadow 0.5s;
+}
+
+input:focus {
+  background: #fff;
+  border: 2px solid hsl(var(--primary-color));
+}
+
+input:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.06), 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+svg {
+  width: 24px;
+  margin-top: 0;
+}
+
+.search-icon {
+  color: hsl(var(--primary-color));
+}
+
+.search-icon:hover,
+.cancel-icon:hover {
+  color: hsl(var(--primary-color));
+}
+.input-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.search-container {
+  display: flex;
+  width: 100%;
+  --container-height: 50px;
+  height: var(--container-height);
+  margin: auto;
+}
+
+.search-icon {
+  height: 100%;
+  left: 14px;
+  position: absolute;
+  top: 0;
+}
+
+.cancel-icon {
+  font-size: 0.9rem;
+  height: 100%;
+  right: 14px;
+  position: absolute;
+  top: 2px;
+  width: 18px;
+  color: hsl(var(--primary-color));
+}
+
+.icon-container {
+  position: relative;
+  height: 45px;
+  display: inline-block;
+}
+
+.cancel-hidden {
+  opacity: 0%;
+}
+
+.not-hidden {
+  opacity: 50%;
 }

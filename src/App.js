@@ -19,6 +19,7 @@ export default function App() {
 
   const [searchInput, setSearchInput] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
+  const [isFocussed, setIsFocussed] = useState(false);
 
   useEffect(() => setLocal("transactions", transactions), [transactions]);
   useEffect(() => setLocal("count", count), [count]);
@@ -93,6 +94,10 @@ export default function App() {
     setSearchInput(value);
   };
 
+  const handleSetInputFocus = (state) => {
+    setIsFocussed(state);
+  };
+
   return (
     <div className="App">
       <Header data={transactions} currencyFormatter={getFormattedAmount} />
@@ -111,6 +116,8 @@ export default function App() {
                 onTransactionAdd={handleTransactionAdd}
                 setCount={setCount}
                 count={count}
+                onInputFocus={handleSetInputFocus}
+                isFocussed={isFocussed}
               />
             }
           />
@@ -125,14 +132,28 @@ export default function App() {
             }
           />
           <Route
-            path="/transactions/search"
+            path="/search"
             element={
               <SearchPage
                 data={transactions}
+                dateFormatter={getFormattedDate}
+                currencyFormatter={getFormattedAmount}
                 searchInput={searchInput}
+                isFocussed={isFocussed}
+                onInputFocus={handleSetInputFocus}
                 filteredResults={filteredResults}
                 onFilterResults={handleTransactionsFilter}
                 onInputEntry={handleInputEntry}
+              />
+            }
+          />
+          <Route
+            path="/search/detail/:transactionId"
+            element={
+              <TransactionsDetail
+                data={filteredResults}
+                dateFormatter={getFormattedDate}
+                currencyFormatter={getFormattedAmount}
               />
             }
           />

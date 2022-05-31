@@ -16,14 +16,6 @@ export default function Merchants({
 
   const handleMerchantFilter = (merchant) => {
     handleInputEntry(merchant.name);
-    const searchResults = data.filter((entry) => {
-      return Object.values(entry.merchant)
-        .join("")
-        .toLowerCase()
-        .includes(merchant.name.toLowerCase());
-    });
-
-    return handleTransactionsFilter(searchResults);
   };
 
   return (

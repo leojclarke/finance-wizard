@@ -1,10 +1,10 @@
 .active {
-  color: var(--secondary-color);
+  color: hsl(var(--secondary-color));
   font-weight: 900;
 }
 
 .inactive {
-  color: var(--primary-color);
+  color: hsl(var(--primary-color));
   font-weight: 700;
 }
 
@@ -17,6 +17,7 @@
   align-items: center;
   justify-content: center;
   position: fixed;
+  z-index: 5;
 }
 
 .box-shadow {
