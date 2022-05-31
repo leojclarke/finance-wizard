@@ -20,7 +20,6 @@ export default function Search({
         .toLowerCase()
         .includes(searchInput.toLowerCase());
     });
-
     return handleTransactionsFilter(searchResults);
   };
 

@@ -132,16 +132,28 @@ export default function App() {
             }
           />
           <Route
-            path="/transactions/search"
+            path="/search"
             element={
               <SearchPage
                 data={transactions}
+                dateFormatter={getFormattedDate}
+                currencyFormatter={getFormattedAmount}
                 searchInput={searchInput}
                 isFocussed={isFocussed}
                 onInputFocus={handleSetInputFocus}
                 filteredResults={filteredResults}
                 onFilterResults={handleTransactionsFilter}
                 onInputEntry={handleInputEntry}
+              />
+            }
+          />
+          <Route
+            path="/search/detail/:transactionId"
+            element={
+              <TransactionsDetail
+                data={filteredResults}
+                dateFormatter={getFormattedDate}
+                currencyFormatter={getFormattedAmount}
               />
             }
           />

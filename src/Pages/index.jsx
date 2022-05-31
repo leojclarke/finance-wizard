@@ -30,7 +30,7 @@ export default function Home({
         </div>
       </div>
       <Link
-        to="/transactions/search"
+        to="/search"
         className="search-link"
         onClick={useEffect(() => {
           onInputFocus(true);
